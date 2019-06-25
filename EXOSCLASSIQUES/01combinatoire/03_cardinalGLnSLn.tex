@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 01-03 : Cardinal de $\mathcal{G}\mathcal{L}_n(K)$ et $\mathcal{S}\mathcal{L}_n(K)$: ALG1-02 1.8}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+\section*{Enoncé}
+Soit $K$ un corps commutatif de cardinal $q$. Calculer $|\mathcal{G}\mathcal{L}_n(K)|$ et $|\mathcal{S}\mathcal{L}_n(K)|$.
+\section*{Solution}
+Pour construire une matrice de $\mathcal{G}\mathcal{L}_n(K)$, il faut construire les $n$ colonnes $(C_i)_{1\leq i\leq n}$ de telles manières à que cette famille soit libre. 
+Pour la première, il y a $q^n-1$ possibilités, en ayant retiré le vecteur nul. Pour la seconde, l'espace engendré ne doit pas être contenu dans la droite de celle précédente, de dimension $1$, $KC_1$ de cardinal $q$, d'où $q^n-q$ possibilités.
+
+Par récurrence, la colonne $k$ doit engendrer un espace vectoriel qui n'est pas inclu dans celui engendré par les $k-1$, autrement dit
+\begin{align*}
+KC_k\not\subset \bigoplus_{i=1}^{k-1} KC_i
+\end{align*}
+
+L'espace a droite a une dimension $q^{k-1}$, ainsi il y a $q^n-q^{k-1}$ possibilités, on trouve finalement
+\begin{align*}
+|\mathcal{G}\mathcal{L}_n(K)| = \prod_{k=0}^{n-1} q^n-q^k
+\end{align*}
+
+
+
+Or $\det :\mathcal{G}\mathcal{L}_n(K) \mapsto K^*$ est surjective, de noyau $\mathcal{S}\mathcal{L}_n(K)$, d'après 2.4 d'algèbre 1, on a 
+\begin{align*}
+|\ker \det | |\textup{im} \det| = |\mathcal{G}\mathcal{L}_n(K)|
+\end{align*}
+
+Ainsi,
+\begin{align*}
+|\mathcal{S}\mathcal{L}_n(K)| = \frac{1}{q-1}\prod_{k=0}^{n-1}q^n-q^k
+\end{align*}
+\QED
+
+\end{document}

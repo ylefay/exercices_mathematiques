@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 01-01 : Nombre de dérangements : ALG1-02 1.2}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+\section{Première démonstration}
+On note $D_k$ le nombre de dérangements à $k$-éléments.
+Soit $p\in \llbracket 0;n\rrbracket$, 
+\begin{align*}
+\sum_{k=0}^{p}(-1)^k \underbrace{\begin{pmatrix}n\\k\end{pmatrix}\begin{pmatrix} n-k\\p-k\end{pmatrix}}_{=\begin{pmatrix}n\\p\end{pmatrix}} = \left\{
+     \begin{array}{@{}l@{\thinspace}l}
+      1 \textup{ si } p = 0\\
+      0 \textup{ sinon }
+     \end{array}
+   \right.   
+\end{align*}
+
+
+On a la partition suivante
+\begin{align*}
+\mathfrak{S}_n = \bigsqcup_{k=0}^{n}{\{\sigma\in\mathfrak{S}_n : |\textup{supp}(\sigma)| = k \}}
+\end{align*}
+
+D'où (le $k$ devient $n-k$ par la symétrie du coefficient binomial)
+\begin{align*}
+n ! = \sum_{k=0}^{n} \begin{pmatrix}n\\k\end{pmatrix}D_k
+\end{align*}
+
+On calcule 
+\begin{align*}
+n!\sum_{k=0}^n \frac{(-1)^k}{k!} &= \sum_{k=0}^n (-1)^k \begin{pmatrix}n\\k\end{pmatrix} (n-k)!\\
+&=\sum_{k=0}^n (-1)^k \begin{pmatrix} n\\k\end{pmatrix}\sum_{p=0}^{n-k}\begin{pmatrix}n-k\\p\end{pmatrix}D_p\\
+&=\sum_{p=0}^n \sum_{k=0}^{n-p}(-1)^k \begin{pmatrix}
+n\\k
+\end{pmatrix} \begin{pmatrix}
+n-k\\p
+\end{pmatrix}D_p = D_n
+\end{align*} \QED
+\section{Seconde démonstration, préférée}
+Posons pour tout $i\in\llbracket 1;n\rrbracket$, l'ensemble 
+\begin{align*}
+U_i = \{\sigma \in \mathfrak{S}_n : \sigma(i) = i\}
+\end{align*}
+
+Alors
+\begin{align*}
+D_n &= n!-\bigg|\bigcup_{i=1}^n U_i\bigg|\\
+&= n!-\sum_{k=1}^n (-1)^{k-1}\sum_{1\leq i_1<\ldots<i_k\leq n}\bigg|\bigcap_{j=1}^{k}U_{i_j}\bigg|\\
+&= n!-\sum_{k=1}^n (-1)^{k-1}(n-k)!\begin{pmatrix}
+n\\k
+\end{pmatrix}\\
+&=n!\sum_{k=0}^n \frac{(-1)^k}{k!}
+\end{align*}
+\QED
+\end{document}

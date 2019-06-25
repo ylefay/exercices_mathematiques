@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 0X-01 : Majoration d'indice de nilpotence : ALG? K-29-1-14}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+
+\section*{Enoncé}
+Soit $E$ un espace vectoriel de dimension $n$, soit $f\in\mathcal{L}(E)$, nilpotente de rang $p_0$. Soit $g\in\mathcal{L}(E)$ telle que, pour tout $x\in E$, il existe $p_x\in\mathbb{N}^*$ telle que $f^{p_x}(x) = 0$
+\begin{enumerate}
+\item Majorer $p_0$. 
+\item Montrer que $g$ est nilpotente.
+\end{enumerate}
+
+\section*{Solution}
+\begin{enumerate}
+\item Il existe $x_0\in E$ tel que pour tout $j\in\llbracket 0;p-1\rrbracket$, $f^j(x_0)$, cela par minimalité de $p_0$. On montre par récurrence immédiate que la famille $(x_0,f(x_0),\ldots, f^{p_0-1}(x_0))$ est une famille libre. On obtient donc $p_0\leq n$.
+\item Soit $(e_1,\ldots,e_n)$ une base de $E$. L'indice de nilpotence de $g$ est alors $\max (p_{e_1},\ldots, p_{e_n})$.
+\end{enumerate} \QED
+\end{document}

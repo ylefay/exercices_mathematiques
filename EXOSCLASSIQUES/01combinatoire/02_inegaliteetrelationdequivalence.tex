@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 01-02 : Inégalité sur une relation d'équivalence : ALG1-02 1.1}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+
+\section*{Enoncé}
+Soit $A$ un ensemble de cardinal $n$, $\mathcal{R}$ une relation d'équivalence sur $A$ avec $k$ classes, $m$ le cardinal du graphe de $\mathcal{R}$. Montrer que $n^2\leq km$
+\section*{Solution}
+On sait que les $k$ classes d'équivalence forment une partition de $A$, notons ces classes, $(A_i)_{1\leq i\leq k}$
+\begin{align*}
+n = \sum_{j=1}^k |A_i|
+\end{align*}
+
+Aussi, 
+\begin{align*}
+m &= |\{(x,y)\in A^2 : x \mathcal{R} y\}|\\
+&=\sum_{x\in A} |\bar{x}|\\
+&=\sum_{j=1}^k \sum_{x\in A_i}{\bar{x}}\\
+&=\sum_{j=1}^k |A_i|^2 
+\end{align*}
+
+Puis par Cauchy-Schwarz, 
+\begin{align*}
+n^2 =\bigg( \sum_{j=1}^k |A_i|\bigg)^2 \leq k \sum_{j=1}^k |A_i|^2 = km
+\end{align*}
+\end{document}

@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 02-05 : Probabilité que $k$ nombres soient premiers entre eux : ALG1-01 ?}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+
+\section*{Enoncé}
+Calculer la probabilité que $k$ nombres soient premiers entre-eux, en utilisant la fonction de Mobïus.
+\section*{Solution}
+Introduisons $c_n^k = \{(a_1,\ldots,a_k)\in\llbracket 1;n\rrbracket ^k : a_1 \wedge \ldots \wedge a_k = 1\}$.
+Posons $n = p_1\ldots p_v$, puis pour tout $i\in\llbracket 1;v\rrbracket$,
+\begin{align*}
+A_i = \{j\in\llbracket 1;n\rrbracket : p_i | j\}.
+\end{align*}
+
+Alors $c_n^k = \overline{\bigcup_{i=1}^{v}A_i^k}$, d'où
+\begin{align*}
+|c_n^k| &= n^k -\sum_{\varnothing\neq I\subset \llbracket 1;v\rrbracket}(-1)^{|I|-1}\bigg|\bigcap_{i\in I}{A_i^k}\bigg|\\
+&= n^k+\sum_{\varnothing\neq I\subset \llbracket 1;v\rrbracket}(-1)^{|I|}\bigg \lfloor \frac{n}{\prod_{i\in I}p_i}\bigg\rfloor^k \\
+&= \sum_{d=1}^n \mu(d)\lfloor n/d\rfloor^k 
+\end{align*}
+
+Ainsi \begin{align*}
+|c_n^k|/n^k \longrightarrow &\quad \sum_{d=1}^{\infty}{\mu(d)/d^k}\\
+& = \prod_{p\in \mathbb{P}}\bigg\{\sum_{j=0}^{\infty}\mu(p^j)p^{-jk}\bigg\}\\
+& = \prod_{p\in \mathbb{P}}1-p^{-k} \\ &= \frac{1}{\zeta(s)}
+\end{align*}
+
+En utilisant l'identité du produit Eulérien (voir ?) puis $\mu(p) = -1$, $\mu(1) = 1$, $\mu(p^j) = 0$ pour $j\geq 2$.
+\QED
+\end{document}

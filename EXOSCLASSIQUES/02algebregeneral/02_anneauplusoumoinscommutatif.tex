@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 02-02 : Nombre de dérangements : ALG? K-09-5-2}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+\section*{Enoncé}
+Soit $(A,+,\times)$ un anneau unifère tel que,
+\begin{align*}
+\forall a,b\in A, \quad ab=\pm ba
+\end{align*}
+
+Montrer que $A$ est commutatif.
+\section*{Solution}
+Notons $Z(A)$ le centre de $A$ est $Z^*(A)$ l'anticentre de $A$. Montrons que $A=Z(A)\cup Z^*(A)$. Supposons par l'absurde qu'il existe $a\in A\backslash Z(A)\cup Z^*(A)$, c'est-à-dire qu'il existe $x,y\in A$ tels que 
+\begin{align*}
+\left\{
+     \begin{array}{@{}l@{\thinspace}l}
+     ax=xa, \quad ax\neq -xa\\
+     ay=-ya, \quad ay\neq ya
+     \end{array}
+   \right.   
+\end{align*}
+
+En sommant, $a(x+y)=(x-y)a=\pm a(x-y)$, on trouve alors dans le cas $+$, $ay=-ay=ya$, dans le cas $-$, $ax=-ax$, absurde dans les deux cas.
+
+On vérifie facilement que $Z(A)$ et $Z^*(A)$ sont des groupes, un résultat classique nous dit que l'union de deux groupes est un groupe si et seulement si l'un est inclus dans l'autre. Si $Z^*(A)\subset Z(A)$ alors c'est gagné, si $Z(A)\subset Z^*(A)$ alors $1\times 1 = -1\times 1$, d'où,
+\begin{align*}
+\forall a,b\quad ab=-ba=ba
+\end{align*}
+\QED
+\end{document}

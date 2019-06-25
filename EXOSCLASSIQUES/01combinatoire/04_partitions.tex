@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 02-04 : Partitions d'un entier : ALG1-02 1.11}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+\section*{Enoncé}
+Pour quelles partitions de $n$, qu'on écrit $n = a_1+\ldots a_k$, le produit $\prod_{i=1}^k a_i$ est maximal ?
+\section*{Solution}
+Les $a_i$ sont inférieurs ou égaux à $4$, En effet, si $a_i\geq 5$, alors $a_i = (a_i-3)+3$, or $3(a_i-3)\geq a_i$ car $2a_i>9$.
+
+On peut remplacer les $a_i = 4$ par $2+2$ sans changer le produit.
+
+Si $a_i = 1$, il suffit de le regrouper avec un autre terme pour obtenir un produit plus grand.
+
+Ainsi $a_i \in \{2,3\}$.
+
+Il y a au plus deux termes de $2$, par exemple, s'il y en a $3$ alors $2+2+2$, de produit $8$, peut être remplacé par $3+3$ de produit $9$.
+
+On peut conclure, si $n\equiv 0 [3]$ alors la partition est composée que de $3$, si $n\equiv 1[3]$, alors la partition est composée de deux $2$ et le reste de $3$, si $n\equiv 2 [3]$, alors la partition est composée de un $2$ et de $3$.
+
+On peut aussi remarquer que si l'on égalise tous les nombres de la partition et qu'on s'autorise à travailler dans $\mathbb{R}^+$, alors $n=ka$ puis on maximise $\bigg(\frac{n}{a}\bigg)^{\frac{n}{a}}$, on obtient $a=e$, d'où la discussion sur $2$ et $3$.
+
+\QED
+
+
+\end{document}

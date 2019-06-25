@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE ?-01 : Somme des diviseurs et indicatrice d'Euler ALG? K-12-1-14:18}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+
+\section*{Enoncé}
+Calculer $\sigma(n)$ la somme des diviseurs de $n\in \mathbb{N}$, majorer $\sigma(n)$. Démontrer que $\varphi(n) = n\prod_{p|n}\bigg(1-\frac{1}{p}\bigg)$.
+\section*{Solution}
+Considérons $n=p_1^{\alpha_1}\ldots p_k^{\alpha_k}$, alors
+\begin{align*}
+\sigma(n) &= \sum_{(\beta_j)\in \prod_{j=0}^{k}\llbracket 0;\alpha_j\rrbracket}\prod_{i=1}^k p_i^{\beta_i}\\
+&=\prod_{i=1}^k \sum_{\beta_i\in\llbracket 0;\alpha_i\rrbracket}{p_i^{\beta_i}}\\
+&=\prod_{i=1}^k \frac{p_i^{\alpha_i+1}-1}{p_i-1}
+\end{align*}
+
+Il est clair que l'ensemble des diviseurs de $n$ est compris dans $\{\frac{n}{k} : k\in\llbracket 1;n\rrbracket\}$, ainsi, 
+\begin{align*}
+\sigma(n)\leq n\sum_{k=1}^n \frac{1}{k}\sim n \ln{n}
+\end{align*}
+
+On peut utiliser le caractère multiplicatif de $\varphi$ ou le théorème des restes chinois, les deux mènent au résultat, on utilise le théorème des restes chinois. 
+\begin{align*}
+\varphi(n) &= |(\mathbb{Z}/{n\mathbb{Z}})^*|\\
+&= \bigg|\prod_{p|n}\bigg(\mathbb{Z}/{p^{v_p(n)}\mathbb{Z}}\bigg)^*\bigg|\\
+&=\prod_{p|n}\bigg|\bigg(\mathbb{Z}/{p^{v_p(n)}\mathbb{Z}}\bigg)^*\bigg|\\
+&=\prod_{p|n}p^{v_p(n)}-p^{v_p(n)-1}\bigg|\\
+&=n\prod_{p|n}\bigg(1-\frac{1}{p}\bigg)
+\end{align*}
+\end{document}

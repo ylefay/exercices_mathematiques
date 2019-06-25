@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 02-01 : Calcul d'un inverse : ALG1-02 2.2 K-9-1-12}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+
+\section*{Enoncé}
+Soit $G$, un groupe, $a,b\in A$, tels que $1-ab$ soit inversible, calculer $(1-ba)^{-1}$.
+\section*{Solution}
+L'idée est que si $a$ est un élément nilpotent, alors l'inverse de $1-ab$ s'écrit par Bernoulli,
+\begin{align*}
+\sum_{k=0}^\infty (ab)^k 
+\end{align*}
+
+On en déduit que $ba$ est nilpotent puis que l'inverse de $1-ba$ est
+\begin{align*}
+1+ba+(ba)^2+\ldots &= 1+b(1+ab+\ldots)a\\
+&=1+b(1-ab)^{-1}a
+\end{align*}
+
+En général, on vérifie sans mal que $(1-ba)(1+b(1-ab)^{-1}a) = 1$ \QED
+\end{document}
