@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 06-01 : Caractérisation des ouverts de $\mathbb{R}$ ALG? K-11-?}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+
+\section*{Enoncé}
+Démontrer que tout ouvert $\mathcal{U}$ de $\mathbb{R}$ s'écrit comme l'union dénombrable d'intervalles ouverts disjoints. Pour cela, on démontrera avant l'existence pour tout $x\in \mathcal{U}$ d'un intervalle ouvert $I_x$ maximale au sens de l'inclusion tel que $x\in I_x\subset \mathcal{U}$.
+\section*{Solution}
+Soit $x\in \mathcal{U}$, posons $\mathcal{U}_x$ l'union de tous les intervalles ouverts contenus dans $\mathcal{U}$ et qui contiennent $x$, c'est un intervalle ouvert non vide car $x$ est chacun des intervalles qui composent $\mathcal{U}_x$.
+\begin{align*}
+\mathcal{U} = \bigcup_{x\in \mathcal{U}}\mathcal{U}_x
+\end{align*}
+
+Montrons que $\mathcal{U}_x\cap \mathcal{U}_y = \varnothing$ ou $\mathcal{U}_x = \mathcal{U}_y$. Pour cela, montrons que si $z\in\mathcal{U}_x$ alors $\mathcal{U}_z = \mathcal{U}_x$.
+
+Soit $z\in\mathcal{U}_x$, il existe un intervalle $I$ ouvert tel que $z,\, x\in I$, soit $x'\in \mathcal{U}_x$, alors il existe un intervalle $J$ ouvert tel que $x',\, x\in J$, alors $I\cup J$ est un intervalle ouvert (intervalle car ils contiennent toutes les deux $x$) qui contient $x'$ et $z$, donc $x'\in \mathcal{U}_z$. De même, soit $z'\in \mathcal{U}_z$, alors il existe un intervalle $J$ ouvert tel que $z',\,z\in J$, alors $I\cup J$ est un intervalle ouvert qui contient $z',\, x$, donc $z'\in\mathcal{U}_x$. Ainsi s'il existe $z\in\mathcal{U}_x\cap \mathcal{U}_y$, alors $\mathcal{U}_x=\mathcal{U}_z=\mathcal{U}_y$. 
+
+Enfin, utilisons un argument de séparabilité de $\mathbb{R}$, en effet, il existe par la densité de $\mathbb{Q}$ dans $\mathbb{R}$ un rationnel $q_x$ aussi proche de $x$, d'où $J_{q_x}=J_x$, l'inclusion suivante est bien évidemment dénombrable, 
+\begin{align*}
+\mathcal{U} = \bigcup_{q\in\mathcal{U}\cap \mathbb{Q}}J_q
+\end{align*}
+\QED
+\end{document}

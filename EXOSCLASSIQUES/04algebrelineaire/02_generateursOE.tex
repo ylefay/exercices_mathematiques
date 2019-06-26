@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\DeclareMathOperator{\rg}{rg}
+\begin{document}
+\title{FICHE 04-02 : Générateurs de $\mathcal{O}(E)$ ALG? }
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+
+\section*{Enoncé}
+Soit $u\in \mathcal{O}(E)$, montrer que $u$ s'écrit comme un produit de $k$ réflexions avec $k\leq \rg{u-\textup{Id}_E}$. 
+\section*{Solution}
+Procédons par récurrence sur $\rg{u-\textup{Id}_E}$. Si $u=\textup{Id}_E$ alors $u$ s'écrit comme le produit de $0$ transposition. 
+
+Soit $u\in \mathcal{O}(E)$ telle que $r = \rg u-\textup{Id}_E > 0$, supposons le résultat vrai pour $0,1,\ldots r-1$. Il existe alors $e\in E$ tel que $u(e)\neq e$. 
+
+Posons $H = (u(e)-e)^{\perp}$, c'est un hyperplan. Soit $s \in \mathcal{O}(E)\backslash \mathcal{S}\mathcal{O}(E)$ la réflexion orthogonale par rapport à $H$.
+
+Montrons que $\rg su-\textup{Id}_E < \rg u-\textup{Id}_E$, ou encore $\dim \ker u-\textup{Id}_E < \dim \ker su-\textup{Id}_E$. 
+
+Plus précisément $\ker u-\textup{Id}_E \subsetneq \ker su-\textup{Id}_E$. Si $u(x)=x$ alors $\langle u(x), u(e)-e\rangle = \langle u(x), u(e)\rangle-\langle x, e\rangle = 0$, donc $x\in H$ puis $su(x)=u(x)=x$. De plus, $||u(e)||=e$ donc $\langle u(e)-e, u(e)+e\rangle = 0$, donc $s(u(e)+e) = u(e)+e$  et $s(u(e)-e)=e-u(e)$, d'où $su(e)=e$, ainsi $e\in \ker su-\textup{Id}_E\backslash \ker u-\textup{Id}_E$. 
+
+L'hypothèse de récurrence s'applique pour $su$, il existe $s_1,\ldots,s_k\in \mathcal{O}(E)\backslash \mathcal{S}\mathcal{O}(E)$ avec $k\leq \rg su-\textup{Id}_E<\rg u -\textup{Id}$ tels que
+\begin{align*}
+su = \prod_{j=1}^k s_j
+\end{align*}
+
+Soit encore, 
+\begin{align*}
+u = s\prod_{j=1}^k s_j
+\end{align*}
+
+Ce qui permet de conclure.
+\QED
+\end{document}
