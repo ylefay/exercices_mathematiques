@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 01-07 : Dénombrement du nombre d'involutions : ALG?}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+\section*{Enoncé}
+Soit $\mathfrak{I}_n = \{\sigma\in \mathfrak{S}_n : \sigma^2 = \textup{Id}_n\}$, calculer $|\mathfrak{I}_n|$. Généraliser à $\mathfrak{I}_n^m = \{\sigma \in\mathfrak{S}_n : \sigma^m = \textup{Id}_n\}$.
+\section*{Solution}
+Soit $\sigma\in\mathfrak{I}_n$, notons $k=|\textup{supp }\sigma|$, $k$ est clairement pair, de plus, on a nécessairement
+\begin{align*}
+\sigma = \prod_{i \in \textup{supp }\sigma}(i,\sigma(i))
+\end{align*}
+
+avec les supports des transpositions disjoints entre-eux. Pour construire $\sigma$, il suffit donc de choisir les $k/2$-couples complètement disjoints, sans oublier que les produits vont permuter
+\begin{align*}
+\frac{1}{(k/2)!}\prod_{j=0}^{k/2-1}\begin{pmatrix}
+n-2j\\2
+\end{pmatrix}
+\end{align*}
+
+On trouve donc au final,
+\begin{align*}
+|\mathfrak{I}_n| = \sum_{k=0, \, k \in 2\mathbb{N}}\frac{1}{(k/2)!}\prod_{j=0}^{k/2-1}\begin{pmatrix}n-2j\\2\end{pmatrix}
+\end{align*}
+
+
+De même, on trouve facilement qu'un élément $\sigma$ de $\mathfrak{I}_n^m$ s'écrit
+\begin{align*}
+\sigma = \prod_{i\in \textup{supp }\sigma}(i,\sigma(i), \sigma^2(i),\ldots,\sigma^{m-1}(i))
+\end{align*}
+
+puis
+\begin{align*}
+|\mathfrak{I}_n^m|= \sum_{k=0,\, k\in m\mathbb{N}}\frac{1}{(k/m)!}\prod_{j=0}^{k/m-1}\begin{pmatrix}n-mj\\m\end{pmatrix}
+\end{align*}
+
+\QED
+
+\end{document}

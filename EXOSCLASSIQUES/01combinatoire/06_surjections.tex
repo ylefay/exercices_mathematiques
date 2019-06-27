@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 01-06 : Dénombrement du nombre de surjections : ALG? K-08-D}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+\section*{Enoncé}
+Dénombrer le nombre de surjections de $\llbracket 1;n\rrbracket$ dans $\llbracket 1;m\rrbracket$.
+\section*{Solution (par la formule du Crible)}
+Posons pour tout $k\in\llbracket 1;m\rrbracket$,
+\begin{align*}
+A_k = \{f : \llbracket 1;n\rrbracket \to \llbracket 1;m\rrbracket : \forall i\in\llbracket 1;n\rrbracket f(i) \neq k\}
+\end{align*}
+
+Alors il est clair que le nombre de surjections est égal à 
+\begin{align*}
+\bigg|\overline{\bigcup_{k=1}^m A_k}\bigg| & = m^n - \sum_{k=1}^m (-1)^{k-1}\sum_{1\leq i_1<\ldots<i_k\leq n}\bigg|\bigcap_{j=1}^kA_{i_j}\bigg|\\
+&=m^n +\sum_{k=1}^m (-1)^k \begin{pmatrix}
+n\\k
+\end{pmatrix} (m-k)^n\\
+&=\sum_{k=0}^m (-1)^k \begin{pmatrix}
+n\\k
+\end{pmatrix}
+(m-k)^n 
+\end{align*}
+
+
+\QED
+
+\end{document}
