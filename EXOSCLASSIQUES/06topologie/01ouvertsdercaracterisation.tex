@@ -26,9 +26,9 @@ Montrons que $\mathcal{U}_x\cap \mathcal{U}_y = \varnothing$ ou $\mathcal{U}_x =
 
 Soit $z\in\mathcal{U}_x$, il existe un intervalle $I$ ouvert tel que $z,\, x\in I$, soit $x'\in \mathcal{U}_x$, alors il existe un intervalle $J$ ouvert tel que $x',\, x\in J$, alors $I\cup J$ est un intervalle ouvert (intervalle car ils contiennent toutes les deux $x$) qui contient $x'$ et $z$, donc $x'\in \mathcal{U}_z$. De même, soit $z'\in \mathcal{U}_z$, alors il existe un intervalle $J$ ouvert tel que $z',\,z\in J$, alors $I\cup J$ est un intervalle ouvert qui contient $z',\, x$, donc $z'\in\mathcal{U}_x$. Ainsi s'il existe $z\in\mathcal{U}_x\cap \mathcal{U}_y$, alors $\mathcal{U}_x=\mathcal{U}_z=\mathcal{U}_y$. 
 
-Enfin, utilisons un argument de séparabilité de $\mathbb{R}$, en effet, il existe par la densité de $\mathbb{Q}$ dans $\mathbb{R}$ un rationnel $q_x$ aussi proche de $x$, d'où $J_{q_x}=J_x$, l'inclusion suivante est bien évidemment dénombrable, 
+Enfin, utilisons un argument de séparabilité de $\mathbb{R}$, en effet, il existe par la densité de $\mathbb{Q}$ dans $\mathbb{R}$ un rationnel $q_x$ aussi proche de $x$, d'où $\mathcal{U}_{q_x}=\mathcal{U}_x$, l'inclusion suivante est bien évidemment dénombrable, 
 \begin{align*}
-\mathcal{U} = \bigcup_{q\in\mathcal{U}\cap \mathbb{Q}}J_q
+\mathcal{U} = \bigcup_{q\in\mathcal{U}\cap \mathbb{Q}}\mathcal{U}_q
 \end{align*}
 \QED
 \end{document}
