@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 02-04 : Groupe abélien d'ordre $pq$ : ALG1-01-2.6}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+\section*{Enoncé}
+Soit $G$ un groupe abélien d'ordre $pq$ avec $p$ et $q$ premiers distincts. Montrer que $G$ est cyclique.
+\section*{Solution}
+Par le Lemme de Cauchy, il existe un élément $x$ d'ordre $p$ et un élément $y$ d'ordre $q$, les deux sont premiers entre-eux et commutent, ainsi $xy$ est d'ordre $pq$.
+On peut préciser la démonstration que $xy$ est d'ordre $pq$, en effet, $(xy)^p = y^p \neq e$ car $q\nmid p$, de même pour $q$, et $xy\neq e$ car sinon $p=q$, ainsi par le théorème de Lagrange, l'ordre de $xy$ ne peut qu'être $pq$.
+\QED
+
+\end{document}

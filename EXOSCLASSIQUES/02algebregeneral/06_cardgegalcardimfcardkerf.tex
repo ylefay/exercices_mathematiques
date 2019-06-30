@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\DeclareMathOperator{\im}{im}
+\begin{document}
+\title{FICHE 02-04 : $|G|=|\im f||\ker f|$ : ALG1-01-2.4}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+\section*{Enoncé}
+Soit $G,\, G'$ deux groupes et $f$ un morphisme de $G$ vers $G'$. Montrer que $|G|=|\im f||\ker f|$.
+\section*{Solution}
+Introduisons la relation d'équivalence $\sim$ définie par 
+\begin{align*}
+\forall x,\, y\in G,\quad x\sim y \Longleftrightarrow f(x) = f(y)
+\end{align*}
+
+On a $x\sim y \Longleftrightarrow f(x^{-1}y) = 1 \Longleftrightarrow y\in x\ker f$. Ainsi les classes d'équivalences sont de la forme $x\ker f$, toutes de cardinal $|\ker f|$. Aussi, $G/\!\raisebox{-.50ex}{\ensuremath{\sim}} \cong \im f$ ainsi puisqu'elles forment une partition, on a
+\begin{align*}
+|G|=|\im f||\ker f|
+\end{align*}
+\QED
+
+\end{document}

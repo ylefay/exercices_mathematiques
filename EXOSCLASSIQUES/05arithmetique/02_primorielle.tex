@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 05-02 : Majoration de la primorielle ALG? MET 2. SE 1. K-12-2-8}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+
+\section*{Enoncé}
+Soit $k\geq 1$, montrer que $\begin{pmatrix}
+2k+1\\k
+\end{pmatrix}< 4^k$ et en déduire que $P_n = \prod_{p\leq n}p< 4^n$.
+\section*{Solution}
+On a directement,
+\begin{align*}
+2\begin{pmatrix}
+2k+1\\k
+\end{pmatrix}=\begin{pmatrix}
+2k+1\\k
+\end{pmatrix}+\begin{pmatrix}
+2k+1\\
+k
+\end{pmatrix}<\sum_{k=0}^{2k+1} \begin{pmatrix}
+2k+1\\
+j
+\end{pmatrix}=2\times 4^k
+\end{align*}
+
+Montrons par récurrence que $P_n< 4^n$. La propriété est initialisée en $n=2$, supposons celle-ci vraie pour tout $j\leq n-1$. On vérifie par Gauss que pour $k+2\leq p\leq 2k+1$, $p\mid \begin{pmatrix}2k+1\\k\end{pmatrix}$, donc $p\leq 4^k$. . Si $n$ est pair alors $P_{n}=P_{n-1}<4^{n-1}<4^n$. Si $n=2k+1$ alors 
+\begin{align*}
+P_{n}=\prod_{1\leq p\leq k+1}p \prod_{k+2\leq p \leq 2k+1}p< 4^{k+1}\times 4^{k}=4^n
+\end{align*}
+
+Ce qui conclue la récurrence.
+\QED
+\end{document}

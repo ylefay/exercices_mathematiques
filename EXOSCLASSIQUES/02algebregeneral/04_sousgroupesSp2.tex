@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 02-04 : Sous-groupes distingués de $\mathfrak{S}_p$ : divers}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+\section*{Enoncé}
+Soit $p\geq 5$, montrer que les sous-groupes distingués de $\mathfrak{S}_p$ sont $\{\textup{Id}\},\, \mathfrak{A}_p,\, \mathfrak{S}_p$.
+
+\section*{Solution}
+Soit $H$ un sous-groupe distingué de $\mathfrak{S}_p$, posons $K=H\cap \mathfrak{A}_n$, alors $K$ est un sous-groupe distingué de $\mathfrak{A}_p$, or $\mathfrak{A}_p$ est simple, donc $K$ est $\{\textup{Id}\}$ ou $\mathfrak{A}_n$. 
+
+Plaçons-nous dans le premier cas, remarquons que $\ker \varepsilon|_{H} = K = \{\textup{Id}\}$, donc $\varepsilon$ est injectif et $H$ est isomorphe à un sous-groupe de $\{-1,1\}$. Si $H$ n'est pas de cardinal $1$ alors il est de cardinal $2$ et $H = \{\textup{Id},\, \sigma\}$ où $\sigma\in \mathfrak{S}_p\backslash\mathfrak{A}_n$. Or $\sigma$ se décompose en des transpositions, notons en une $(a\, b)$, trouvons $g\in\mathfrak{S}_p$ tel que $g\sigma g^{-1}\neq \sigma$, ce qui contredira le caractère distingué de $H$. On pose $c\notin\{a,\,b\}$ alors en posant $g=(b\, c)$ on a $g\sigma g^{-1}(a) = c \neq \sigma(a)$.
+
+ 
+Dans le second cas, cela implique que $H$ contient $\mathfrak{A}_p$ et donc $[H\,:\,\mathfrak{S}_p]\in\{1;2\}$, les deux cas correspondent respectivement à $H = \mathfrak{S}_p$ et à $H = \mathfrak{A}_p$.
+
+\QED
+\end{document}
