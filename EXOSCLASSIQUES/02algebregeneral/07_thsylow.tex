@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\DeclareMathOperator{\im}{im}
+\begin{document}
+\title{FICHE 02-07 : Un théorème de Sylow : MET-1 1.4.7}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+\section*{Enoncé}
+\begin{enumerate}
+\item Soit $G$ un groupe abélien fini. Soit $p$ un nombre premier divisant l'ordre de $G$. Montrer qu'il existe un sous groupe de $G$ d'ordre p. 
+\item Soit $G$ un groupe fini d'ordre $h$, non supposé abélien. Démontrer le théorème de Sylow : Si $p^{\alpha}\mid h$ avec $\alpha \in \mathbb{N}$, alors il existe un sous groupe de $G$ d'ordre $p^{\alpha}$. Indication : on pourra procéder par récurrence sur le cardinal de $G$.
+\end{enumerate}
+\section*{Solution}
+\begin{enumerate}
+\item Soit $G$ un groupe abélien fini, $p$ un nombre premier divisant l'ordre de $G$. $G$ étant fini, on peut introduire $(x_1,\ldots,x_n)$ un système de générateurs de $G$. On note $r_1,\ldots r_n$ les ordres des éléments du générateur. Posons
+\begin{align*}
+\varphi : \left\{
+     \begin{array}{@{}l@{\thinspace}l}
+     \langle x_1\rangle\times\ldots\times\langle x_n\rangle &\to G\\
+     (y_1,\ldots,y_n)&\mapsto y_1\ldots y_n
+     \end{array}
+   \right.   
+\end{align*}
+
+Par définition du système générateur, $\varphi$ est surjective. 
+D'après un théorème d'isomorphie, 
+\begin{align*}
+G\cong \prod_{1\leq i\leq n}\langle x_i\rangle \!\raisebox{-.50ex}{\ensuremath{/ \ker \varphi}} \end{align*}
+
+Ainsi, 
+\begin{align*}
+|G||\ker \varphi| = \prod_{1\leq i\leq n}r_i 
+\end{align*}
+
+On en déduit que $p\mid \prod_{1\leq i\leq n} r_i$ puis il existe $i\in \llbracket 1;n\rrbracket$ tel que $p\mid r_i$. S'il existe $q\in \mathbb{N}^*$ tel que $r_i = pq$ alors $x_{i}^q$ est d'ordre $p$ puis $\langle x_i^q\rangle$ est un sous groupe de $G$ d'ordre $p$. 
+\item Procédons par récurrence sur $h=|G|$, pour $h=1$ le résultat est vérifié. Supposons vraie la propriété pour les rangs strictement inférieurs à $h$, on sait qu'il existe une famille finie $(H_i)_{i\in I}$ de sous groupes stricts de $G$ telle que
+\begin{align*}
+h = |G|=|Z(G)|+\sum_{i\in I} \frac{h}{|H_i|}
+\end{align*}
+
+Deux cas se présentent : il existe $i\in I : p^{\alpha} \mid |H_i|$, alors par le théorème de Lagrange, il existe un sous groupe $H$ de $H_i$ et donc de $G$ d'ordre $p^{\alpha}$. 
+
+Dans le cas contraire, pour tout $i\in I$, $p^{\alpha} \nmid |H_i|$, mais $p^{\alpha}\mid h$, d'où $p\mid h/|H_i|$. Ainsi $p\mid |Z(G)|$ puis d'après la question précédente, il existe un groupe d'ordre $p$, noté $H$ de $Z(G)$. Considérons la surjection canonique $\pi$ de $G$ dans $G/H$. L'ordre du groupe $G/H$ est $h/p$, d'où $p^{\alpha-1}\mid G/H$ puis par récurrence, il existe un sous groupe $H'$ de $G/H$ d'ordre $p^{\alpha -1}$. Enfin, $\pi^{-1}(H')$ est un sous groupe de $G$ d'ordre $p^{\alpha}$.
+
+\QED
+\end{enumerate}
+\end{document}
