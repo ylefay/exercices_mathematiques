@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\DeclareMathOperator{\im}{im}
+\begin{document}
+\title{FICHE 02-09 : $p|H|=|G|$: MET-1 1.4.8}
+\author{Yvann Le Fay}
+\date{Juillet 2019}
+\maketitle
+\section*{Enoncé}
+Soit $G$ un groupe fini et $H$ un sous groupe tel que $p|H|=|G|$ où $p$ est le plus petit diviseur premier de $|G|$, montrer que $H$ est distingué dans $G$.
+\section*{Solution}
+Posons la relation d'équivalence $\sim$,
+\begin{align*}
+\forall x,\, y\in G,\quad x\sim y \Longleftrightarrow x^{-1}y\in H
+\end{align*}
+
+Les classes d'équivalences sont les classes à gauche, posons $X=G\!\raisebox{-.50ex}{\ensuremath{/ \sim}}$, alors $|X|=p$ pour les mêmes raisons que dans la démonstration du théorème de Lagrange, et
+\begin{align*}
+\sigma_g : \left\{
+     \begin{array}{@{}l@{\thinspace}l}
+     X&\to X\\
+     x&\mapsto gx
+     \end{array}\right. \quad \varphi : \left\{
+     \begin{array}{@{}l@{\thinspace}l}
+     G&\to \mathfrak{S}_X\\
+     g&\mapsto \sigma_g
+     \end{array}\right. 
+\end{align*}
+
+On peut vérifier que $\sigma_g$ a pour réciproque $\sigma_{g^{-1}}$ et que c'est donc un élément de $\mathfrak{S}_X$. Par le premier théorème d'isomorphie, on a
+\begin{align*}
+\im \varphi \cong G\!\raisebox{-.50ex}{\ensuremath{/ \ker \varphi}}< \mathfrak{S}_X
+\end{align*}
+
+Puis le théorème de Lagrange et la condition sur $p$ donnent $\frac{|G|}{|\ker \varphi|}\mid p!$ puis $\frac{|G|}{|\ker \varphi|}\mid p$, donc 
+\begin{align*}
+|\ker \varphi|\geq |G|/p=|H|
+\end{align*} 
+
+De plus, on obtient que 
+\begin{align*}
+\ker \varphi =\{g\in G :\forall x\in G xgx^{-1}\in H\}\subset H
+\end{align*}
+
+Ce qui permet d'affirmer que $\ker \varphi = H$ et $H$ est distingué dans $G$.
+\QED
+\end{document}

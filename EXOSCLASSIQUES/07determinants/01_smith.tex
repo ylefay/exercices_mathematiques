@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\diag}{diag}
+\begin{document}
+\title{FICHE 07-01 : Déterminant de Smith MET-1 3.6.6}
+\author{Yvann Le Fay}
+\date{Juillet 2019}
+\maketitle
+\section*{Enoncé}
+Soit $n\in\mathbb{N}$, $\psi : \mathbb{N}^* \mapsto \mathbb{C}$, on définit pour tout $i,\,j\in\llbracket 1;n\rrbracket$, $a_{i,j}=\sum_{k|i,\,k|j}\psi(k)$ et $A=(a_{i,j})$. Montrer que
+\begin{align*}
+\det A =\prod_{k=1}^n \psi(k)
+\end{align*}
+
+Appliquer cette formule pour calculer $\det A$ où $a_{i,j}$ est respectivement, le nombre de diviseurs communs à $i$ et à $j$, la somme des diviseurs communs à $i$ et à $j$, $i\wedge j$.
+\section*{Solution}
+Pososons $b_{i,j} = 0$ si $i\nmid j$ et $b_{i,j}=1$ so $i\mid j$, puis $B=(b_{i,j})$, alors,
+\begin{align*}
+a_{i,j}=\sum_{k|i,\,k|j}{\psi(k)}=\sum_{k=1}^n b_{k,j}b_{k,i}\psi(k)
+\end{align*}
+
+D'où, $A=\,^{t}B\diag(\psi(k))B$ puis $\det A = \prod_{k=1}^{n}\psi(k)$.
+
+Pour le premier cas on pose $\psi(k)=1$ et on trouve $1$, le second, $\psi(k)=k$ et on trouve $n!$ et le troisième on utilise,
+\begin{align*}
+n = \sum_{k|n}\varphi{k}
+\end{align*}
+
+où $\varphi$ est l'indicatrice d'Euler, on utilise donc $n=i \wedge j$, d'où on tire
+\begin{align*}
+i\wedge j =\sum_{k\mid i\wedge j}\varphi(k) = \sum_{k\mid i,\,k\mid j}\varphi(k)
+\end{align*}
+
+puis $\det A = \prod_{k=1}^n \varphi(k)$.
+\QED
+\end{document}
