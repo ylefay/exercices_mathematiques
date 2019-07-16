@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\diag}{diag}
+\begin{document}
+\title{FICHE 07-01 : Déterminant de Vandermonde lacunaire ALG2-01 1-11}
+\author{Yvann Le Fay}
+\date{Juillet 2019}
+\maketitle
+\section*{Enoncé}
+Soit $0\leq k\leq n$, calculer
+\begin{align*}
+D_k = 
+\begin{vmatrix}
+1 & x_1 & \ldots & x_1^{k-1} & x_1^{k+1}& \ldots & x_1^n\\
+\vdots & & & \vdots& \vdots & & \vdots\\
+1 & x_n & \ldots & x_n^{k-1} & x_n^{k+1}& \ldots & x_n^n
+\end{vmatrix}
+\end{align*}
+
+\section*{Solution}
+Introduisons le déterminant de Vandermonde associé, en rajoutant la colonne manquante et la ligne manquante, on a
+\begin{align*}
+V = \begin{vmatrix}
+1 & x_1 & \ldots & x_1^k & \ldots & x_1^n\\
+\vdots & & \vdots& \vdots\\
+1 & x_n & \ldots &x_n^k&  \ldots & x_n^n\\
+1 & X &\ldots &X^k&\ldots &X^n
+\end{vmatrix}
+\end{align*} 
+
+On a classiquement que, 
+\begin{align*}
+V &= \prod_{1\leq i<j\leq n}(x_j-x_i)\prod_{k=1}^n (X-x_k)\\
+&=\prod_{1\leq i<j\leq n}(x_j-x_i)\bigg(X^n -\sigma_1 X^{n-1}+\ldots+(-1)^n \sigma_n\bigg)
+\end{align*}
+
+Avec $\sigma_k$, les fonctions élémentaires des $x_k$. 
+De plus, $D_k$ est le mineur de la colonne $k+1$, ligne, $n+1$, ainsi, $(-1)^{n+k}D_k$ est le coefficient de degré $k$ de $V$, i.e, 
+\begin{align*}
+D_k = \sigma_{n-k} \prod_{1\leq i<j\leq n}(x_j-x_i)
+\end{align*}
+\QED
+\end{document}

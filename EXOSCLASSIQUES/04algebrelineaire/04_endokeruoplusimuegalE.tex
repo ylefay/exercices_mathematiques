@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rg}{rg}
+\begin{document}
+\title{FICHE 04-04 : CNS sur $uv = 0$ et $u+v\in\mathcal{G}\mathcal{L}_n(E)$ : ALG1-01 6.13}
+\author{Yvann Le Fay}
+\date{Juillet 2019}
+\maketitle
+\section*{Enoncé}
+Soit $u\in\mathcal{L}(E)$, $E$ un $K$-ev de dimension finie, $n$. Enoncer une condition nécessaire et suffisante pour qu'il existe $v\in\mathcal{G}\mathcal{L}_n(E)$ telle que $u+v\in\mathcal{G}\mathcal{L}_n(E)$ et $uv = 0$.
+\section*{Solution}
+Nécessairement, $\im v \subset \ker u$, d'où $\rg v\leq n-\rg u$. De plus, $\rg (u+v)= n \leq \rg u + \rg v$. On en déduit que $\rg u +\rg v = n$. Par l'inclusion et l'égalité des dimensions, on obtient que $\rg v = \ker u$, aussi, la somme $\im u+\ker u$ est directe (car $\rg (u+v)=\rg u + \rg v)$. On en déduit finalement que 
+\begin{align*}
+\ker u \oplus \im u = E
+\end{align*}
+
+Supposons que $E = \ker u \oplus \im u$, introduisons $p$ le projecteur dans la direction de $\ker u$ parallèlement à $\im u$, alors $p$ convient. 
+\QED
+\end{document}

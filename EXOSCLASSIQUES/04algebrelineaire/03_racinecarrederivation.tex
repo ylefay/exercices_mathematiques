@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\DeclareMathOperator{\im}{im}
+\begin{document}
+\title{FICHE 04-03 : Racine carrée de $D$ : ALG1-01 6.34}
+\author{Yvann Le Fay}
+\date{Juillet 2019}
+\maketitle
+\section*{Enoncé}
+Montrer qu'il n'existe pas d'opérateur $T\in \mathcal{L}(E)$ tel que $T^2 = D$, où $D$ est l'opérateur de dérivation.
+\section*{Solution d'Algèbre 01}
+Considérons la restriction, $t$, de $T$ à $\ker D^2 = \mathbb{C}_1[X]$. Alors $t^4=0$, ainsi l'indice de nilpotence d'après la fiche 01 de ce chapitre, de $t$ est majorée par $2$, la dimension de l'espace de restriction. Ainsi $t^2 = d = 0$, ce qui est absurde.
+\section*{Deuxième solution}
+Soit $u\in\mathcal{L}(E)$, posons pour tout $k\in\mathbb{N}$, $N_k = \ker u^k$. On obtient aisément que
+\begin{align*}
+N_0\subset N_1\subset \ldots
+\end{align*}
+
+De plus, s'il existe $k_0\in\mathbb{N}$ tel que $N_{k_0}=N_{k_0+1}$, alors la suite $(N_k)$ est stationnaire à partir de ce rang (à démontrer). Maintenant que cela est dit, appliquons-le à $T$, on obtient
+\begin{align*}
+\{0\}\subset \ker T\subset \mathbb{C}_0[X]\subset \ker T^3 \subset \ldots
+\end{align*}
+
+Cela laisse deux possibilités, $\ker T = \{0\}$ et $\ker T = \mathbb{C}_0[X]$, dans les deux cas, on obtient que la suite des $(\mathbb{C}_k[X])$ est stationnaire, absurde.
+\QED
+\end{document}

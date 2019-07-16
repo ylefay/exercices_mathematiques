@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\DeclareMathOperator{\im}{im}
+\begin{document}
+\title{FICHE 02-10 : Groupe dont l'ensemble des sous-groupes est fini: ALG1-01 2.2}
+\author{Yvann Le Fay}
+\date{Juillet 2019}
+\maketitle
+\section*{Enoncé}
+Caractériser les groupes dont l'ensemble des sous-groupes est fini.
+\section*{Solution}
+Soit $G$ un groupe dont l'ensemble $E$ des sous-groupes est fini. Soit $g\in G$, alors $g$ est d'ordre fini car sinon $\langle g \rangle$ est isomorphe à $\mathbb{Z}$ qui admet une infinité de sous-groupes. De plus si $E'$ dénote le sous ensemble de $E$ composé des groupes monogènes de $G$ alors $G = \bigcup_{H\in E'} H$, or $E'$ est fini. $G$ est donc fini en tant qu'union finie de groupes finis. Le résultat réciproque est évident. 
+\QED
+\end{document}
