@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 05-03 : $\sum_{d|n}\phi(d) = n$ msc}
+\author{Yvann Le Fay}
+\date{Juin 2019}
+\maketitle
+
+\section*{Enoncé}
+Montrer que $\sum_{d|n}\phi(d) = n$.
+\section*{Solution}
+L'égalité provient de la partition suivante
+\begin{align*}
+\llbracket 1;n\rrbracket = \bigsqcup_{d|n}\{k\in\llbracket 1;d\rrbracket : (k,d) = 1\}.
+\end{align*}
+
+Pour la justifier, considérons les fractions $\frac{1}{n}$, $\frac{2}{n}, \ldots$, $\frac{n}{n}$. Celles-ci sont après réduction, de la forme $\frac{a}{d}$ avec $d\mid n$, $a\wedge d = 1$ et $a\in\llbracket 1;d\rrbracket$, d'où la partition. On en déduit l'égalité sur les cardinaux.
+\QED
+\end{document}

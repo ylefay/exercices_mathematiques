@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 08-01 : Une inégalité de Tchebychev : exercice 404 d'Alix}
+\author{Yvann Le Fay}
+\date{Juillet 2019}
+\maketitle
+
+\section*{Enoncé}
+Soient $f$, $g$ deux fonctions continues de même monotonie et $a \leq b$, montrer que 
+\begin{align*}
+\int_{a}^b f\int_{a}^b g \leq (b-a)\int_{a}^b fg
+\end{align*}
+\section*{Solution}
+L'idée est d'utiliser les sommes de Riemann, l'inégalité est en effet impliquée par 
+\begin{align}
+\bigg(\frac{b-a}{n}\bigg)^2\sum_{k=0}^{n-1} f_k \sum_{k=0}^{n-1} g_k \leq \frac{(b-a)^2}{n}\sum_{k=0}^{n-1} {f_k g_k}
+\end{align}
+
+où pour tout $k\in\llbracket 0;n\rrbracket$, $f_k = f(a+k\frac{b-a}{n})$, similairement pour $g_k$. Afin de la montrer, on remarque que l'hypothèse sur la monotonie implique que pour tout $k,j\in\llbracket 0;n-1\rrbracket$
+\begin{align*}
+(f_k-f_j)(g_k-g_j)\geq 0 
+\end{align*}
+
+Ainsi, 
+\begin{align*}
+&\frac{b-a}{n}\sum_{k,j}(f_k-f_j)(g_k-g_j) = \frac{b-a}{n}\bigg(2n\sum_k f_kg_k-2\sum_{k,j} f_kg_j\bigg) \geq 0\\
+\Longleftrightarrow &(b-a)\sum_k f_kg_k \geq \frac{b-a}{n}\sum_{k,j}f_kg_j\\
+\Longleftrightarrow & (1)
+\end{align*}
+\QED
+\end{document}

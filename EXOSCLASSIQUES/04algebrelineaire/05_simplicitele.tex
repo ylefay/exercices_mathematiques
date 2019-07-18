@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rg}{rg}
+\begin{document}
+\title{FICHE 04-05 : Simplicité de $\mathcal{L}(E)$ : Troesch 24.15, misc}
+\author{Yvann Le Fay}
+\date{Juillet 2019}
+\maketitle
+\section*{Enoncé}
+Montrer que les seuls idéaux bilatères de $\mathcal{L}(E)$ sont $\{0\}$ et $\mathcal{L}(E)$.
+\section*{Solution}
+Premièrement, on vérifie aisément que les deux propositions sont bien des idéaux bilatères de $\mathcal{L}(E)$. 
+
+Soit $\mathcal{I}$ un idéal bilatère de $\mathcal{L}(E)$. Supposons que $\mathcal{I}\neq \{0\}$, alors il existe $u\in\mathcal{I}$ telle que $u\neq 0$. Introduisons une base de $E$ et la base canonique de $\mathcal{L}(E)$, $(e^*_{i,j})_{(1\leq i,j\leq n)}$ définie par 
+\begin{align*}
+\forall i,j\in\llbracket 1;n\rrbracket,\, e^*_{i,j}(e_k) = \delta_{i,k}e_j
+\end{align*}
+
+Pour tout $i,j,k,l, r \in \llbracket 1;n\rrbracket$, $e^*_{i,j}e^*_{k,l}(e_r) = e^*_{i,j}(\delta_{r,k}e_l) = \delta_{r,k} \delta_{l,i}e_j = \delta_{l,i}e^*_{k,j}(e_r)$
+
+On décompose $u$ sur cette base, 
+\begin{align*}
+u = \sum_{i,j}\lambda_{i,j} e^*_{i,j}
+\end{align*}
+
+Or $u$ étant non nulle, il existe $i_0, j_0 \in\llbracket 1;n\rrbracket$ tels que $\lambda_{i_0,j_0}\neq 0$. Ainsi,
+
+\begin{align*}
+e^*_{j_0,j}ue^*_{i,i_0} = \lambda_{i_0,j_0}e_{i,j}
+\end{align*}
+
+On en déduit que $\mathcal{L}(E)\subset \mathcal{I}$ puis $I=\mathcal{L}(E)$.
+\QED
+\end{document}
