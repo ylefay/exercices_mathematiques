@@ -141,9 +141,8 @@ Soit $f$ une fonction dérivable sur $[0,+\infty[$ telle que $f(0)=0$.
 \subsection*{Solutions} 
 \subsubsection*{Exercice 1.}
 \begin{enumerate}
-\item Soit $(A_j)_{j\in\mathbb{N}}$ une famille de parties négligeables. Pour tout $j\in\mathbb{N}$, posons $\varepsilon_j = \varepsilon_0/2^j$.
-
-Il existe donc une suite $((I_{n,j})_{n\in\mathbb{N}})_{j\in\mathbb{N}}$ telle que \begin{align*}
+\item Soit $(A_j)_{j\in\mathbb{N}}$ une famille de parties négligeables. Pour tout $j\in\mathbb{N}$, posons $\varepsilon_j = \varepsilon_0/2^j$ de telle manière qu'il existe une suite $((I_{n,j})_{n\in\mathbb{N}})_{j\in\mathbb{N}}$ telle que pour tout $j\in\mathbb{N}, \sum_{n\in\mathbb{N}}\mu(I_{n,j})\leq \varepsilon_0/2^j$ et $A_j\subset \bigcup_{n\in\mathbb{N}}I_{n,j}$, alors 
+\begin{align*}
 \bigcup_{j\in\mathbb{N}}{A_j}\subset \bigcup_{j\in\mathbb{N}}\bigcup_{n\in\mathbb{N}}I_{n,j}
 \end{align*}
 et 
@@ -185,9 +184,9 @@ Supposons que $f$ soit bornée en $+\infty$, alors $f$ étant croissante, $f$ co
 \begin{enumerate}
 \item La somme est une somme de termes strictement positif et est majorée par $\frac{n}{1+n}$. Par le TLM, la série converge vers $l < 1$.
 \item Par un développement limité d'ordre 1, $f(\frac{1}{n+k})=\frac{1}{n+k}f'(0)$, en sommant et en passant à la limite, on a le résultat escompté.
-\item En prenant $f(x)=\log(1+x)$, on a
+\item En prenant $f(x)=\log(1+x)$, on a $f'(0) = 1$ puis
 \begin{align*}
-\sum_{k=1}^{n} \frac{1}{n+k} = \log \bigg(\prod_{k=1}^{n}{\frac{n+k+1}{n+k}}\bigg)=\log \frac{2n+1}{n+1}\xrightarrow[n\to\infty]{} \log 2
+\log \bigg(\prod_{k=1}^{n}{\frac{n+k+1}{n+k}}\bigg)=\log \frac{2n+1}{n+1}\xrightarrow[n\to\infty]{} \log 2 = l
 \end{align*}
 \end{enumerate}
 
