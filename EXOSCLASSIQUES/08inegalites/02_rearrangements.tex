@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 08-02 : Inégalité de réarrangement : ANAL01-1 1.15}
+\author{Yvann Le Fay}
+\date{Juillet 2019}
+\maketitle
+
+\section*{Enoncé}
+Soient $x_1\geq x_2\geq \ldots\geq x_n$ et $y_1\geq y_2\geq \ldots\geq y_n$ des réels. Soit $(z_1,\ldots,\, z_n)$ une permutation des $(y_1,\ldots,\, y_n)$. 
+Montrer que
+\begin{align*}
+	\sum_{k=1}^n x_i z_i\leq \sum_{k=1}^n x_i y_i
+\end{align*}
+\section*{Solution}
+Notons pour $\sigma\in\mathfrak{S}_n$, $T(\sigma) = \sum_{k=1}^n x_i y_{\sigma(i)}$, $\mathfrak{S}_n$ étant fini, il existe bien au moins une permutation qui maximise la somme. Parmi celles-ci considérons $\sigma$ une avec le plus de points fixes. Supposons par l'absurde que $\sigma \neq \textup{Id}$, il existe alors $j\in \llbracket 1;n-1\rrbracket$ tel que $\sigma(j)\neq j$ et tel que $\forall i \in\llbracket 1;j-1\rrbracket$, $\sigma(i)=i$. Autrement dit $j$ est le point le plus petit qui ne soit pas un point fixe. Nécessairement $\sigma(j)>j$ par minimalité de $j$, aussi, il existe $k\in\llbracket j+1;n\rrbracket$ tel que $\sigma(k)=j$. On en déduit que
+\begin{align*}
+x_j\leq x_k\qquad j = \sigma(k)<\sigma(j) \Rightarrow y_{j}\leq y_{\sigma(j)}
+\end{align*}
+
+Soit encore, 
+\begin{align*}
+	(x_k-x_j)(y_{\sigma(j)}-y_{j}) = x_ky_{\sigma(j)} -x_jy_{\sigma(j)}+x_jy_{j}-x_ky_{j} \geq 0
+\end{align*}
+Ce qui est équivalent à 
+\begin{align}
+	x_ky_{\sigma(j)}+x_jy_{j}\geq x_jy_{\sigma(j)}+x_ky_{j}
+\end{align}
+
+Posons 
+\begin{align*}
+	\tau(i) = 
+\left\{
+     \begin{array}{@{}l@{\thinspace}l}
+	     j \textup{ si } i = j\\
+	     \sigma(j) \textup{ si } i = k\\
+	     \sigma(i) \textup{ sinon }
+     \end{array}
+   \right.   	
+\end{align*}
+
+Mais l'inégalité (1) est équivalente à $T(\tau)\geq T(\sigma)$. La somme de droite étant maximale, on obtient que $\tau$ réalise aussi le maximum, or $\tau$ admet au moins un point fixe de moi que $\sigma$, ce qui est contradictoire par la minimalité du nombre de points fixes de $\sigma$, donc $\sigma = \textup{Id}$. 
+
+Remarquons que l'inégalité de Tchebychev de l'exercice précédent se déduit facilement de cette égalité, en effet, on a 
+\begin{align*}
+	x_1y_1+\ldots+x_n y_n &\leq x_1y_1+\ldots+x_ny_n\\
+	x_1y_2+\ldots+x_ny_1 &\leq x_1y_1+\ldots +x_ny_n\\
+		     &\,\,\, \vdots \\
+	x_1y_n+\ldots +x_ny_{n-1}&\leq x_1y_1+\ldots+x_ny_n
+\end{align*}
+
+D'où en sommant, $(x_1+\ldots+x_n)(y_1+\ldots+y_n)\leq n(x_1y_1+\ldots+x_ny_n)$, puis en divisant par $n^2$, on obtient bien l'inégalité de Tchebychev.
+\QED
+\end{document}

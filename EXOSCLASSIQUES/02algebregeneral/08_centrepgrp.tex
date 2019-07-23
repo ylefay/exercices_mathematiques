@@ -23,6 +23,14 @@ D'après l'équation aux classes, il existe une famille finie de sous groupes st
 \begin{align*}
 p^m = |Z(G)| + \sum_{i\in I}\frac{p^m}{|H_i|}
 \end{align*}
+
 D'après le théorème de Lagrange, pour tout $i\in I$, $\frac{p^m}{|H_i|}\in \{1,\ldots,p^m\}$, le cas $1$ est à exclure car $H_i$ est un sous groupe strict, par l'équation aux classes, on en déduit que $p\mid |Z(G)|$, d'où le résultat. Dans le cas où $m=2$, supposons par l'absurde que $|Z(G)| = p$, il existe $x\in G\backslash Z(G)$, alors $N_x = \{g\in G : gx=xg\}$ est un sous-groupe strict de $G$. Aussi $Z(G)\subset N_x$ donc nécessairement $|N_x|=p$ puis $Z(G)=N_x$, ce qui est absurde.
+
+Une autre démonstration utilise le résultat suivant, soit $G$ un groupe fini, 
+\begin{align*}
+	G/Z(G) \textup{ cyclique } \Rightarrow G \textup{ abélien }
+\end{align*}
+
+Ainsi, si $|Z(G)| = p$ alors $G/Z(G) \cong \mathbb{Z}/p\mathbb{Z}$, il est donc cylique d'où $G$ est abélien puis $|Z(G)| = p^2$, absurde.
 \QED
 \end{document}
