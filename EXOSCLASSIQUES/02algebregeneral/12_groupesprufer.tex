@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\stab}{Stab}
+\DeclareMathOperator{\orb}{Orb}
+\begin{document}
+\title{FICHE 02-12 : Groupes quasi-cycliques de Prüfer : ALG1-01 2.18}
+\author{Yvann Le Fay}
+\date{Juillet 2019}
+\maketitle
+\section*{Enoncé}
+Soit $\mathbb{U}_p$ le groupe engendré par les $e^{\frac{2i\pi}{p^\alpha}}$ pour $\alpha\in\mathbb{N}$ avec $p$ premier. Déterminer les sous-groupes de $\mathbb{U}_p$.
+\section*{Solution}
+Pour tout $\alpha\in \mathbb{N}$, posons $G_{\alpha} = \langle e^{\frac{2i\pi}{p^{\alpha}}}\rangle$. C'est un sous-groupe de $\mathbb{U}_p$ par définition. Tout sous-groupe de $G_{\alpha}$ par le théorème de Lagrange doit diviser $p^{\alpha}$, il est donc de la forme $G_{\beta}$ avec $\beta \leq \alpha$. La suite des $G_{\alpha}$ est donc strictement croissante pour l'inclusion. D'où, 
+
+\begin{align*}
+	\mathbb{U}_p = \bigcup_{\alpha\in\mathbb{N}} G_{\alpha}
+\end{align*}
+
+Soit $G$ un sous-groupe de $\mathbb{U}_p$. Supposons que $G$ n'est pas de la forme $G_{\beta}$, alors il n'est contenu dans aucun $G_{\alpha}$ d'après la remarque faite sur les sous-groupes de $G_{\alpha}$. Soit $\alpha\in\mathbb{N}$ et $x\in G\backslash G_{\alpha}$. Notons $n\in\mathbb{N}$ le plus petit entier tel que $x \in G_n$. Alors nécessairement, $\alpha < n$. Ecrivons $x$ sous la forme
+\begin{align*}
+	x = e^{\frac{2ik\pi}{p^n}}
+\end{align*}
+
+Alors par minimalité de $n$, $x^{p^{n-1}} = e^{\frac{2ik\pi}{p}}\neq 1$, donc $p\nmid k$, donc $p$ et $k$ sont premiers entre-eux puisque $p$ est premier. Cela suffit à ce que $x$ soit un générateur de $G_n$, or $x\in G$ donc $G_n\subset G$ d'où $G_{\alpha}\subset G_n\subset G$ puisque $\alpha < n$. Le raisonnement mené est vrai pour tout $\alpha\in\mathbb{N}$ puisque $G$ n'est contenu dans aucun $G_{\alpha}$, finalement on en déduit que $G = \mathbb{U}_p$. Ainsi, les sous-groupes de $\mathbb{U}_p$ sont $\mathbb{U}_p$ et les $G_{\alpha}$ pour $\alpha \in \mathbb{N}$.
+\QED
+\end{document}

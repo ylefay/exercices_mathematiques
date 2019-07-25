@@ -18,9 +18,9 @@
 Calculer la probabilité que $k$ nombres soient premiers entre-eux, en utilisant la fonction de Mobïus.
 \section*{Solution}
 Introduisons $c_n^k = \{(a_1,\ldots,a_k)\in\llbracket 1;n\rrbracket ^k : a_1 \wedge \ldots \wedge a_k = 1\}$.
-Posons $n = p_1\ldots p_v$, puis pour tout $i\in\llbracket 1;v\rrbracket$,
+Posons $p_1\ldots p_v$, les nombres premiers inférieurs à $n$, puis pour tout $i\in\llbracket 1;v\rrbracket$,
 \begin{align*}
-A_i = \{j\in\llbracket 1;n\rrbracket : p_i | j\}.
+A_i = \{j\in\llbracket 1;n\rrbracket : p_i \mid j\}.
 \end{align*}
 
 Alors $c_n^k = \overline{\bigcup_{i=1}^{v}A_i^k}$, d'où
