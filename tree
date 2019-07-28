@@ -1,0 +1,85 @@
+.
+├── COLLESSUP
+│   ├── colles_secondtrim.pdf
+│   └── colles_secondtrim.tex
+├── EXOSCLASSIQUES
+│   ├── 01combinatoire
+│   │   ├── 01_derangements.pdf
+│   │   ├── 01_derangements.tex
+│   │   ├── 02_inegaliteetrelationdequivalence.pdf
+│   │   ├── 02_inegaliteetrelationdequivalence.tex
+│   │   ├── 03_cardinalGLnSLn.pdf
+│   │   ├── 03_cardinalGLnSLn.tex
+│   │   ├── 04_partitions.pdf
+│   │   ├── 04_partitions.tex
+│   │   ├── 05_probabilitesnbrspremiers.pdf
+│   │   ├── 05_probabilitesnbrspremiers.tex
+│   │   ├── 06_surjections.pdf
+│   │   ├── 06_surjections.tex
+│   │   ├── 07_involutions.pdf
+│   │   └── 07_involutions.tex
+│   ├── 02algebregeneral
+│   │   ├── 01_inverseetnilpotence.pdf
+│   │   ├── 01_inverseetnilpotence.tex
+│   │   ├── 02_anneauplusoumoinscommutatif.pdf
+│   │   ├── 02_anneauplusoumoinscommutatif.tex
+│   │   ├── 03_sousgroupesSp1.pdf
+│   │   ├── 03_sousgroupesSp1.tex
+│   │   ├── 04_sousgroupesSp2.pdf
+│   │   ├── 04_sousgroupesSp2.tex
+│   │   ├── 05_groupeabpq.pdf
+│   │   ├── 05_groupeabpq.tex
+│   │   ├── 06_cardgegalcardimfcardkerf.pdf
+│   │   ├── 06_cardgegalcardimfcardkerf.tex
+│   │   ├── 07_thsylow.pdf
+│   │   ├── 07_thsylow.tex
+│   │   ├── 08_centrepgrp.pdf
+│   │   ├── 08_centrepgrp.tex
+│   │   ├── 09_pHegalG.pdf
+│   │   ├── 09_pHegalG.tex
+│   │   ├── 10_ensemblesgfini.pdf
+│   │   ├── 10_ensemblesgfini.tex
+│   │   ├── 11_lemmedecauchy.pdf
+│   │   ├── 11_lemmedecauchy.tex
+│   │   ├── 12_groupesprufer.pdf
+│   │   └── 12_groupesprufer.tex
+│   ├── 03polynomes
+│   │   ├── 01_prodsinkpin.pdf
+│   │   └── 01_prodsinkpin.tex
+│   ├── 04algebrelineaire
+│   │   ├── 01_indicenilpotencedimfinie.pdf
+│   │   ├── 01_indicenilpotencedimfinie.tex
+│   │   ├── 02_generateursOE.pdf
+│   │   ├── 02_generateursOE.tex
+│   │   ├── 03_racinecarrederivation.pdf
+│   │   ├── 03_racinecarrederivation.tex
+│   │   ├── 04_endokeruoplusimuegalE.pdf
+│   │   ├── 04_endokeruoplusimuegalE.tex
+│   │   ├── 05_simplicitele.pdf
+│   │   ├── 05_simplicitele.tex
+│   │   ├── 06_supplcommun.pdf
+│   │   └── 06_supplcommun.tex
+│   ├── 05arithmetique
+│   │   ├── 01_sommedesdiviseursetphi.pdf
+│   │   ├── 01_sommedesdiviseursetphi.tex
+│   │   ├── 02_primorielle.pdf
+│   │   ├── 02_primorielle.tex
+│   │   ├── 03_sommephid.pdf
+│   │   └── 03_sommephid.tex
+│   ├── 06topologie
+│   │   ├── 01ouvertsdercaracterisation.pdf
+│   │   └── 01ouvertsdercaracterisation.tex
+│   ├── 07determinants
+│   │   ├── 01_smith.pdf
+│   │   ├── 01_smith.tex
+│   │   ├── 02_vandermondelacunaire.pdf
+│   │   └── 02_vandermondelacunaire.tex
+│   └── 08inegalites
+│       ├── 01_tchebychev2.pdf
+│       ├── 01_tchebychev2.tex
+│       ├── 02_rearrangements.pdf
+│       └── 02_rearrangements.tex
+├── r.sh
+└── tree
+
+10 directories, 72 files
