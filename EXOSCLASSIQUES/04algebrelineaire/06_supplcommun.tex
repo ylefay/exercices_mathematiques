@@ -1,0 +1,60 @@
+% vim:ft=tex:
+%
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 04-06 : Supplémentaire commun }
+\author{Yvann Le Fay}
+\date{Juillet 2019}
+\maketitle
+\section*{Enoncé}
+\begin{enumerate}
+	\item Soit $K$ un corps infini, $E$ un $K$-ev. Montrer qu'il n'existe pas $V_1,\ldots V_n$ des sous-espaces stricts de $E$ tels que
+\begin{align*}
+	E = V_1 \cup \ldots \cup V_n
+\end{align*}
+\item Soit $F_1,\ldots, F_p$ des sous-espaces de $E$ de même dimension finie. Montrer qu'il existe $G$ un sous-espace de $E$ qui soit supplémentaire de chacun des $F_i$ pour $i\in\llbracket 1;p\rrbracket$.
+\end{enumerate}
+\section*{Solution}
+S'il existe une telle suite de sous-espace vectoriel alors il en existe une qui soit de taille minimale et telle qu'aucun de ces sous-espaces ne soit inclu dans la réunion des $n-1$ autres. Supposons donc par l'absurde l'existence d'une telle famille minimale, $V_1, \ldots V_n$
+
+Il existe $x \in V_n\backslash V_1\cup\ldots\cup V_{n-1}$ et $y\in V_1\cup \ldots \cup V_{n-1}\backslash V_n$. Soit $\lambda\in K$, alors $\lambda x + y\in V_n$ ou $\lambda x +y\in V_1\cup\ldots \cup V_n$. Le premier cas est à exclure car sinon $y\in V_n$. Ainsi il existe  $i_{\lambda}\in\llbracket 1;n-1\rrbracket$ tel que $\lambda x + y \in V_{i_{\lambda}}$, considérons l'application qui à $\lambda\in K$ associe un des $i_{\lambda}$. 
+\begin{align*}
+	\left\{
+		\begin{array}{@{}l@{\thinspace}l}
+			K &\to \llbracket 1;n-1\rrbracket\\
+			\lambda &\mapsto i_{\lambda}
+		\end{array}
+	\right.
+\end{align*}
+
+Cette application est injective, en effet, soient $\lambda,\,\mu\in K$ tels que $i_{\lambda}=i_{\mu} = j$, alors $(\lambda-\mu)x\in V_{j}$, d'où $\lambda = \mu$ car $x\notin V_j$. Ainsi, on en déduit que 
+\begin{align*}
+	|K|\leq n-1
+\end{align*}
+
+Absurde car $K$ est infini. 
+
+Notons $r$ la position commune des $F_i$. Posons $G$ un espace de taille maximale tel que 
+\begin{align*}
+	\forall i \in \llbracket 1;p\rrbracket,\, G\cap F_i = \varnothing
+\end{align*}
+
+Supposons par l'absurde que $\dim G +\dim F_i < \dim E$, alors il existe $x\in E$ tel que $G' = G\oplus Kx$ et 
+\begin{align*}
+	\forall i \in \llbracket 1;p\rrbracket,\, G'\cap F_i = \varnothing
+\end{align*}
+
+Ce qui trahit la maximalité de $G$, ainsi 
+\begin{align*}
+	\forall i \in \llbracket 1;p\rrbracket,\, G \oplus F_i = E
+\end{align*}
+\QED
+\end{document}
