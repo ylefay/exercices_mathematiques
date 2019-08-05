@@ -58,7 +58,9 @@
 │   │   ├── 05_simplicitele.pdf
 │   │   ├── 05_simplicitele.tex
 │   │   ├── 06_supplcommun.pdf
-│   │   └── 06_supplcommun.tex
+│   │   ├── 06_supplcommun.tex
+│   │   ├── 07_glninterhyperplan.pdf
+│   │   └── 07_glninterhyperplan.tex
 │   ├── 05arithmetique
 │   │   ├── 01_sommedesdiviseursetphi.pdf
 │   │   ├── 01_sommedesdiviseursetphi.tex
@@ -82,4 +84,4 @@
 ├── r.sh
 └── tree
 
-10 directories, 72 files
+10 directories, 74 files
