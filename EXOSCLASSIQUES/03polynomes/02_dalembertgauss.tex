@@ -1,0 +1,40 @@
+% vim:ft=tex:
+%
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{FICHE 03-02 : Théorème d'Alembert Gauss}
+\author{Yvann Le Fay}
+\date{Août 2019}
+\maketitle
+\section*{Enoncé}
+Soit $P$ un polynome complexe de degré $d\geq 1$. Montrer que $P$ admet une racine dans $\mathbb{C}$.
+\section*{Solution}
+Posons $P = \sum_{i=0}^d a_i X^i$ et $m = \inf\{|P(z)| : z\in \mathbb{C}\}$. Par l'inégalité triangulaire renversée, 
+\begin{align*}
+	\forall z\in \mathbb{C}, \, |P(z)| \geq |a_dz^d| - \sum_{i=0}^{d-1} |a_i z^i|
+\end{align*}
+
+On en déduit que $\lim_{|z|\to +\infty} |P(z)| = +\infty$. On peut écrire $m$ comme la limite d'une certaine suite $|P((z_i)_{i\in \mathbb{N}})|$ avec $(z_i)$ une suite de complexe. Par contraposée de ce qui précède, il existe $R\geq 0$ tel que $\forall z \in \mathbb{C} : |z|\geq R, \, |P(z)|> m+1$. Ainsi la suite $(z_i)$ est à partir d'un certain rang dans le cercle de rayon $R$ de centre l'origine, c'est donc une suite bornée et par le théorème de Bolzano-Weirstrass, on peut en extraire une suite qui converge. Notons $\alpha$ sa limite. Alors par continuité de $P$, on a $P(\alpha) = m$.
+
+Supposons par l'absurde que $m\neq 0$, on peut alors supposer que $\alpha = 0$ et $m = 1$, quitte à remplacer $P(X)$ par $P(X+\alpha)/P(X)$. On peut donc écrire $P(z) = 1+a_qz^q+\ldots+a^d z^d$. 
+Posons $a_q = \rho e^{i\theta}$. Posons $z=re^{i(\pi-\theta)/q}$. Alors par l'inégalité triangulaire,
+\begin{align*}
+	P(z) \leq |1-\rho r^q|+\sum_{k=q+1}^d |a_k|r^k
+\end{align*}
+
+Or pour $|r|$ assez petit (par exemple, $|r|\leq \sqrt[q]{1/\rho}$), le premier terme de droite est positif. Aussi, on voisinage de 0, le second terme à droite s'approche de 0. Ainsi, au voisinage de $0$ pour $r$, 
+\begin{align*}
+	P(z) - m = P(z)-1 < -\rho r < 0 
+\end{align*}
+
+Cela contredit la définition de $m$. Ainsi $m = 0$
+\QED
+\end{document}
