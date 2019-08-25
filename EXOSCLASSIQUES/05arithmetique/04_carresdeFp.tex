@@ -18,7 +18,9 @@
 \section*{Enoncé}
 Dénombrer les carrés de $\mathbb{F}_p$ puis démontrer que $\forall x \in \mathbb{F}_p^*,\,\,\, x  \textup{ est un carré} \Longleftrightarrow x^{\frac{p-1}{2}} = 1$.
 \section*{Solution}
-L'ensemble des carrés de $\mathbb{F}_p^*$ est l'image de $\mathbb{F}_p^*$ par l'application $f : x \mapsto x^2$ qui est un morphisme. Ainsi, on sait que $\im f \equiv \mathbb{F}_p^*/\ker f$. Or $\ker f = \{-1, 1\}$, ainsi, il y a exactement $\frac{p-1}{2}$ carrés dans $\mathbb{F}_p$.
+Si $p = 2$, alors l'énoncé est trivial, supposons dorénavant que $p\geq 3$.
+
+L'ensemble des carrés de $\mathbb{F}_p^*$ est l'image de $\mathbb{F}_p^*$ par l'application $f : x \mapsto x^2$ qui est un morphisme. Ainsi, on sait que $\im f \equiv \mathbb{F}_p^*/\ker f$. Or $\ker f = \{-1, 1\}$, ainsi, il y a exactement $\frac{p-1}{2}$ carrés dans $\mathbb{F}_p^*$.
 
 D'après le petit théorème de Fermat, tout élément $x$ de $\mathbb{F}_p^*$ est solution de $x^{p-1} - 1 = 0$. Or $x^{p-1}  - 1 = (x^{\frac{p-1}{2}}-1)(x^{\frac{p-1}{2}}+1)$. On vérifie bien que $\forall x \in \mathbb{F}_p^*,\,\,\, (x^2)^{\frac{p-1}{2}} = 1$, et de plus, le premier membre de la factorisation égalisé à $0$, a dans $\mathbb{F}_p^*$ au plus $\frac{p-1}{2}$ solutions. Nécessairement, ce sont les carrés de $\mathbb{F}_p^*$. Or aucun de ces carrés n'est solution de l'équation du second membre de la factorisation. De plus nécessairement par le petit théorème de Fermat, $\forall x \in \mathbb{F}_p^*, x^{\frac{p-1}{2}} \in \{-1, 1\}$. Ainsi, les non-carrés de $\mathbb{F}_p^*$ sont exactement les solutions du second membre de la factorisation. 
 
