@@ -24,6 +24,22 @@ D'après le petit théorème de Fermat, tout élément $x$ de $\mathbb{F}_p^*$ e
 
 Ce qui permet de conclure, que $x$ est un carré (ou non) dans $\mathbb{F}_p^*$ est équivalent à $x^{\frac{p-1}{2}} = 1$ (ou $-1$) respectivement.
 
-On a par exemple que si ni $2$ ni $3$ ne sont des carrés dans $\mathbb{F}_p$, alors $6$ en est forcément un.
+On peut montrer avec cela que $X^4-10X^2+1$ est réductible sur $\mathbb{F}_p$ quel que soit $p$ premier. 
+
+En effet, si $2$ est un carré dans $\mathbb{F}_p$, disons $2 = a^2$ alors, 
+\begin{align*}
+	X^4-10X^2 + 1 = (X^2-1)^2 - 8X^2 = (X^2-1)^2 - (2aX)^2 = (X^2-2aX-1)(X^2+2aX-1)
+\end{align*}
+
+Si $3$ est un carré dans $\mathbb{F}_p$, disons $3 = b^2$ alors,
+\begin{align*}
+	X^4-10X^2 + 1 = (X^2+1)^2 - 12X^2 = (X^2+1)^2 - (2bX)^2 = (X^2-2bX+1)(X^2+2bX+1)
+\end{align*}
+
+Enfin si ni $2$ ni $3$ n'est un carré dans $\mathbb{F}_p$ alors nécessairement, d'après ce que l'on a vu, $6$ est un carré, écrivons $c^2 = 6$, alors
+\begin{align*}
+	X^4-10X^2 + 1 = (X^2-5)^2 - 24 = (X^2-2c-5)(X^2+2c-5)
+\end{align*}
+
 \QED
 \end{document}
