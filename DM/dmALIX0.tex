@@ -1,0 +1,197 @@
+% vim:ft=tex:
+%
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\begin{document}
+\title{DM d'Alix 0 }
+\author{Yvann Le Fay}
+\date{Août 2019}
+\maketitle
+\section{Partie I. Les nombres de Liouville}
+Un nombre algébrique est un nombre complexe qui est racine d'un polynôme à coefficients dans $\mathbb{Q}$, un nombre transcendant est un nombre complexe qui n'est pas algébrique.
+
+\subsection{Partie A. Développement décimal illimité}
+On note dans cette partie $\alpha$ un nombre réel de l'intervalle $[0, 1]$. On pose pour tout $n\in\mathbb{N}^*, \,\, a_n = E(10^n\alpha)-10E(10^{n-1}\alpha)$.
+\begin{enumerate}
+	\item Montrer que pour tout $n\in\mathbb{N}^*,\,\, a_n\in\llbracket 0;9\rrbracket$.
+	\item Montrer que pour tout $n\in\mathbb{N}^*,\,\, \frac{E(10^n \alpha)}{10^n} = \sum_{k=1}^n \frac{a_k}{10^k} = 0,a_1a_2\ldots a_n.$
+	\item En déduire que la suite $u_n = \sum_{k=1}^n \frac{a_k}{10^k}$ converge vers un réel que l'on précisera.
+	
+		La suite $0,a_1a_2\ldots a_n\ldots$ est appelée développement décimal illimité (propre) du réel $\alpha$.
+	\item Dans cette question, le nombre $\alpha$ est un rationnel de forme irréductible $\frac{p}{q}$.
+		\begin{enumerate}
+			\item On note $r_k$ le reste de la division euclidienne de $10^k p$ par $q$. Montrer qu'il existe deux entiers $n<m$ tels que $r_n = r_m$.
+			\item Montrer que pour tout $i\in\mathbb{N}^*, a_{n+i}=E(10^i \frac{r_n}{q}) - 10E(10^{i-1}\frac{r_n}{q}) = a_{m+i}$. On pourra écrire que $10^n\alpha = q_nq+r_n$ pour un certain entier $q_n$. En déduire que la suite $(a_k)_{k\in\mathbb{N}}$ est périodique à partir d'un certain rang.
+		\end{enumerate}
+\item On note pour $n\geq 1, \,\, u_n = \sum_{k=1}^n \frac{1}{10^{k!}} $ et $v_n = \sum_{k=1}^{n!}\frac{1}{10^k}$.
+	\begin{enumerate}
+		\item Montrer que pour tout $n\geq 1,\,\, u_n\leq v_n$. Montrer que la suite $v_n$ converge et enfin que la suite $u_n$ converge vers un réel $\alpha\in [0,1]$.
+		\item Déterminer la suite $(a_k)$ du développement décimal illimité de $\alpha$. En déduire que $\alpha$ est un nombre irrationnel.
+	\end{enumerate}
+\end{enumerate}
+\subsection{Partie B. Nombres de Liouville}
+	\begin{enumerate}
+		\item Dans toute cette partie on note $\alpha$ un nombre algébrique irrationnel et $P(X) = \sum_{k=0}^n a_kX^k$, un polynôme de $\mathbb{Q}[X]$.
+		On pose $I_{\alpha} = \{U \in \mathbb{Q}[X] : U(\alpha) = 0\}$.
+		\begin{enumerate}
+			\item Montrer que $I_{\alpha}$ est un sous-groupe du groupe $(\mathbb{Q}[X],\,+)$.
+			\item Justifier l'existence d'un polynôme $\mu_{\alpha}$ appartenant à $I_{\alpha}$ et qui est unitaire et de degré minimal.
+			\item Montrer que si $U\in I_{\alpha}$ alors $\mu_{\alpha}\mid U$.
+			\item Montrer que $I_{\alpha}=\mu_{\alpha}\mathbb{Q}[X]$. Discuter de l'unicité du polynôme $\mu_{\alpha}$.
+		\end{enumerate}
+	\item Montrer que le polynôme $\mu_{\alpha}$ n'a aucune racine rationnelle et que les racines de $\mu_{\alpha}$ sont simples.
+	\item On note $d$ le degré de $\mu_{\alpha}$.
+		\begin{enumerate}
+			\item Montrer qu'li existe un polynôme $P\in\mathbb{Z}[X]$ de degré $d$ tel que $P(\alpha) = 0$.
+			\item Pour tous $\frac{p}{q}\in\mathbb{Q}$, montrer qu'il existe un entier $N\in\mathbb{Z}^*$ tel que $P\Big(\frac{p}{q}\Big) = \frac{N}{q^d}$. En déduire que $\Big|P\Big(\frac{p}{q}\Big)\Big| \geq \frac{1}{q^d}$.
+		\end{enumerate}
+	\item On note $\frac{p}{q}$ un rationnel de l'intervalle $[\alpha-1,\, \alpha+1]$.
+		\begin{enumerate}
+			\item Montrer q'il existe $c_{p,q} \in [\alpha-1,\alpha+1]$ tel que $P\Big(\frac{p}{q}\Big) = \Big(\frac{p}{q}-\alpha\Big)P'(c_{p,q})$.
+			\item Justifier l'existence de $\max_{[\alpha-1,\alpha+1]}|P'| = C$ et montrer que $C>0$.
+			\item On pose $C' = \min(1, 1/C)$. Montrer que pour tout rationnel $\frac{p}{q}\in\mathbb{Q}$, $\Big|\alpha-\frac{p}{q}\Big| \geq \frac{C'}{q^d}$.
+		\end{enumerate}
+		Un nombre de Liouville est un nombre irrationnel $\alpha$ pour tous entiers $d >0$, toutes constantes $C' > 0$, il existe $\frac{p}{q}\in\mathbb{Q}$ tel que $\Big|\alpha-\frac{p}{q}\Big| <\frac{C}{q^d}$. En particulier, un nombre de Liouville n'est pas un nombre algébrique.
+\end{enumerate}
+\subsection{Partie C. Où l'on exhibe un nombre transcendant}
+On note $\alpha$ le réel obtenu à la question 1.1.5. On veut montrer que $\alpha$ est un nombre de Liouville. On suppose par l'absurde que $\alpha$ est un nombre algébrique. Il existe alors $C' > 0$ et $d\in\mathbb{N}^*$ tel que pour tous rationnels $\frac{p}{q}$, $\Big|\alpha-\frac{p}{q}\Big|\geq \frac{C'}{q^d}$.
+\begin{enumerate}
+	\item Montrer pour tous entiers $n,\,\, p$ strictements positifs que $0\leq u_{n+p} - u_n\leq \frac{10}{9\times 10^{(n+1)!}}$. En déduire que $0\leq \alpha-u_n\leq \frac{10}{9\times 10^{(n+1)!}}$.
+	\item Montrer que pour tous $n\in\mathbb{N}^*,\,\, \frac{C'}{10^{d n!}}\leq \frac{10}{9\times 10^{(n+1)!}}$.
+\item Expliquer pourquoi l'inégalité précédente ne peut pas être vérifiée pour tout entier $n$ non nul. Conclure
+	\end{enumerate}
+	C'est le premier exemple de nombre transcendant connu. Mais cela laisse entier la question de la transcendance des nombres usuels comme $\pi,\,\,\, e$ et il faudra attendre les résultats de Lindemann et de Hermitte pour avoir confirmation du caractère transcendant de ces nombres. La partie suivante étudie quelques propritétés des nombres algébriques.
+	\section{Partie II. Les nombres algébriques}
+	Pour $\alpha,\,\,\beta$ deux nombres algébriques, on note $\mathbb{Q}[\alpha] = \{P(\alpha) : P\in\mathbb{Q}[X]\}$ et $\mathbb{Q}[\alpha,\,\, \beta] = \{P(\alpha,\,\,\beta) : P\in\mathbb{Q}[X,\,\,Y]\}$. On pourra utiliser librement que $\mathbb{C}$ est un $\mathbb{Q}$-espace vectoriel.
+	\subsection{Partie A. Structure de $\mathbb{Q}[\alpha]$}
+	On notera $\mu_{\alpha}$ le polynôme minimal de $\alpha$ et $d$ son degré.
+	\begin{enumerate}
+		\item Montrer que $(\mathbb{Q}[\alpha],\,\, +,\,\, \times)$ est un anneau.
+		\item \begin{enumerate} \item Montrer que $(\mathbb{Q}[\alpha],\,\,+,\,\, \cdot)$ est un $\mathbb{Q}$-ev.
+			\item Montrer que pour tout $x\in\mathbb{Q}[\alpha]$, il existe $P\in\mathbb{Q}_{d-1}[X]$ tel que $x=P(\alpha)$.
+			\item En déduire que la famille $(1,\alpha,\ldots\alpha^{d-1})$ est une base de $\mathbb{Q}[\alpha]$.
+		\end{enumerate}
+	\item On fixe $x_0$ un élément non nul de $\mathbb{Q}[\alpha]$ et $f$ l'application
+		\begin{align*}
+			f : \left\{
+				\begin{array}{@{}l@{\thinspace}l}
+					\mathbb{Q}[\alpha]&\to \mathbb{Q}[\alpha]\\
+					x&\mapsto xx_0
+				\end{array}\right.
+		\end{align*}
+	Montrer que $f$ est une application linéaire injective. Montrer que $(\mathbb{Q}[\alpha],\,\,+,\,\, \cdot)$ est un corps.
+\end{enumerate}
+\subsection{Partie B. Le théorème de l'élément primitif}
+	On note $\alpha_1,\ldots,\alpha_d$ et $\beta_1,\ldots,\beta_q$ les racines respectivement de $\mu_{\alpha}$ et $\mu_{\beta}$ dans $\mathbb{C}$. On convient que $\alpha_1 = \alpha$ et $\beta_1 = \beta$.
+	\begin{enumerate}
+		\item Montrer qu'il existe $c\in\mathbb{Q}$ tel que $\alpha_i+c\beta_j \neq \alpha+c\beta$ pour tous $(i,j)\in\llbracket 1;d\rrbracket\times \llbracket 2;q\rrbracket$. Le nombre $c$ peut-il être nul ? On fixe un tel $c$. 
+		\item Montrer que pour tout $n\in\mathbb{N}$, $(\alpha+c\beta)^n \in \textup{Vect}((a^i\beta^j)_{i,j})$. En déduire que $z=\alpha+c\beta$ est un nombre algébrique.
+			On note $P(X) = \mu_{\alpha}(z-cX)$ et $Q(X) = \mu_{\beta}(X)$.
+		\item Montrer que les coefficients de $P(X)$ sont dans $\mathbb{Q}[z]$.
+		\item \begin{enumerate} \item Montrer que le reste de la division euclidienne de $P$ par $Q$ est un polynôme à coefficients dans $\mathbb{Q}[z]$.
+			\item En déduire que $\Delta(X) = P \wedge Q$ est un polynôme à coefficients dans $\mathbb{Q}[z]$.
+			\item Montrer que $\Delta(X) = X-\beta$. 
+			\item Montrer que $\beta\in\mathbb{Q}[z]$ puis que $\alpha\in\mathbb{Q}[z]$.
+		\end{enumerate}
+	\item Montrer que $\mathbb{Q}[\alpha,\,\,\beta] = \mathbb{Q}[z]$. 
+	\item Montrer que l'ensemble des nombres algébriques est un sous-corps de $\mathbb{C}$.
+\end{enumerate}
+\subsection{Partie C. Méthode de Tchirnhauss de rechercue du polynôme minimal}
+Si $Q\in\mathbb{Q}[X]$ alors pour tout $s\in\mathbb{C}$, on note $Q_s(X) = Q(s-X)$.
+\begin{enumerate}
+	\item On pose $P = X^2 + X + 1$ et $Q = X^2 -2$. Donner une CNS sur le nombre $s$ pour que $P$ et $Q_s$ aient une racine commune. On admet que la condition s'écrit $\Delta(s) = 0$ où $\Delta$ est un polynôme.
+	\item Déterminer les racines de $\Delta(s)$.
+	\item \begin{enumerate} \item trouver un polynôme à coefficients dans $Q$ dont $j+\sqrt{2}$ est racine, en déduire le polynôme minimal de $j+\sqrt{2}$.
+		\item Même question pour $\sqrt{2}+\sqrt{3}$.
+	\end{enumerate}
+	\end{enumerate}
+	\section{III. Les polynômes cyclotomiques}
+	On dit que $z$ est une racine primitive $n$-ième de l'unité si $\langle z\rangle = \mathbb{U}_n$. On note $Z_n$ l'ensemble des racines primitives $n$-ièmes de l'unité. On appelle $n$-ième polynôme cyclotomique le polynôme,
+	\begin{align*}
+		\phi_n(X) = \prod_{z\in Z_n}(X-z)
+	\end{align*}
+	\begin{enumerate}
+		\item Soit $k\in\llbracket 0;n-1\rrbracket$. Montrer que $e^{\frac{2ik\pi}{n}}\in Z_n$ si et seulemnet si $k\wedge n = 1$. On note $\varphi(n) =|Z_n|$.
+		\item Soient $m$ et $n$ deux entiers premiers entre eux. Vérifier que l'application $\Psi : (u,\,\, v) \in Z_n\times Z_m\mapsto uv \in Z_{nm}$ est une bijection. En déduire que $\varphi(nm) = \varphi(n)\varphi(m)$.
+		\item Montrer que $\sum_{d\mid n}\varphi(d) = n$. En déduire le degré de $\prod_{d\mid n}\phi_d(X)$.
+	\item Soit $n\in\mathbb{N}^*$, \begin{enumerate}\item Montrer que les racines complexes du polynôme $X^n-1$ sont simples.
+		\item Montrer que $X^{n}-1\mid \prod_{d\mid n}\phi_d(X)$ puis que $X^n-1 = \prod_{d\mid n}\phi_d(X)$.
+		\item Justifier que $\phi_n(X)\in \mathbb{Z}[X]$ pour tout $n\in\mathbb{N}^*$.
+	\end{enumerate}
+\item Soient $p\in\mathbb{P}$ et $m\in\mathbb{N}$ tel que $p\nmid m$.
+	\begin{enumerate}
+		\item Soit $a\in\mathbb{N}$ tel que $\phi_m(a) = 0 \textup{ mod } p$. Montrer que $p\nmid a$ et que $m$ est le plus petit entier naturel non nul tel que $a^m = 1 \textup{ mod } p$.
+		\item En déduire que l'ensemble des nombres premiers $p$ tels que $p = 1$ dans $\mathbb{Z}/{m\mathbb{Z}}$ est infini.
+	\end{enumerate}\end{enumerate}
+	
+	%\section{Partie IV. Les suites sturmiennes}
+	%On appelle mot fini une suite fini d'éléments de ${a,\,\,b}$ et on note $\omega$ le mot vide. Le nombre de lettre d'un mot $m$ est noté $|m|$ et le nombre d'occurance de la lettre $a$ est noté $|m|_a$. On appelle mot infini une suite $(u_n)\in\{a,\,\,b\}^{\mathbb{N}}$ et on écrira $u = u_1\ldots$. On dira que le mot fini $m$ est un mot de $u$ s'il est vide ou s'il existe $n\in\mathbb{N}^*$ et $p\in\mathbb{N}$ tel que $m = u_n\ldots u_{n+p}$, on dira que $m$ est un motif de $u$. 
+	%Si un motif $m$ se répète indéfiniment à partir 'dun certaing rang $n$ dans un mot infini $u$ on écrira $u = u_1\ldots u_n \bar{m}$. On dira alors que le mot $u$ est ultimement périodique.
+	%\subsection{Partie A. Suites sous-additives et entropie topologique}
+	%\begin{enumerate}
+	%	\item On note $v$ une suite réelle positive telle que pour tout $n,\,\, m\in\mathbb{N}^*$, $v_{n+m}\leq v_n+v_m$.
+	%\begin{enumerate}
+	%	\item Justifier que la borne inférieure de $\{\frac{v_n}{n} : n\in\mathbb{N}^*\}$ est un réel positif.
+%	\item Soit $\varepsilon >0$. Montrer l'existence d'un entier $p\in\mathbb{N}^*$ tel que $\frac{v_p}{p}\leq l+\varepsilon$ puis d'un entier $N\geq p$ tel que $\frac{\max(v_1,\ldots,v_n)}{N} \leq \varepsilon$.
+	%\item Montrer que pour tout $n\geq N$, $\frac{v_n}{n}\leq l+\varepsilon$ (On pourra effectuer la division euclidienne de $n$ par $p$). En déduire la convergence de la suite $(v_n/n)$.
+%\end{enumerate}
+%\item Si $u$ est un mot infini alors on définit la fonction de complexité $P_u(n)$ comme le nombre de mots de longueur $n$ qui apparaissent dans $u$. 
+%	\begin{enumerate}
+%		\item Montrer que pour tout $n\in\mathbb{N}$, $1\leq P_u(n) \leq 2^n$.
+%		\item Montrer que pour tout $n,\,\,m\in\mathbb{N}$, $P_u(n+m)\leq P_u(n)P_u(m)$.
+%		\item En déduire que la suite $\bigg(\frac{\ln P_u(n)}{n}\bigg)$ converge vers un réel $l_u \in [0, \ln 2]$. Le réel $l_u$ est appelé entropie topologique de $u$.
+%	\end{enumerate}
+%	\end{enumerate}
+%	\subsection{Partie B. Les mots ultimement périodiques}
+%	L'objectif est de caractériser les mots ultimement périodiques à l'aide de leur fonction de complexité. 
+%	\begin{enumerate}
+%		\item On note dans cette question $u = u_1\ldots u_N \overline{u_{N+1}\ldots u_{N+p}}$. Soit $m$ un mot non vide de $u$ de $p$ lettres. Il existe donc $n\in\mathbb{N}^*$ tel que $m = u_n\ldots u_{n+p-1}$.
+%			\begin{enumerate}
+%				\item Montrer que l'on peut supposer que $n\leq N+p$.
+%				\item En déduire que pour tout $n\in\mathbb{N}, P_u(n)\leq N+p$.
+%				\item Montrer que la suite $(P_u(n))$ est stationnaire.
+%			\end{enumerate}
+%		\item On note $u$ un mot infini et on suppose que la suite $(P_u(n))$ est stationnaire et on note $n_0$ un entier à partir duquel elle est stationnaire. On pose $N = P_u(n_0)$.
+%			\begin{enumerate}
+%				\item Montrer que tout mot de $u$ de longueur $n_0$ se prolonge à droite d'une seule manière en un mot de longueur $n_0+1$.
+%				\item Montrer que parmi les mots 
+%					\begin{align*}
+%						m_1 &= u_1\ldots u_{n_0}\\
+%						m_2 &= u_2\ldots u_{n_0+1}\\
+%						    &\,\,\,\vdots\\
+%						m_{N+1} &= u_{N+1}\ldots u_{n_0+N}
+%					\end{align*}
+%						    Il y a deux mots égaux. En déduire que $u$ est ultimement périodique.
+%				\end{enumerate}
+%			\item Montrer que si $u$ est un mot qui n'est pas ultimement périodique alors la suite $(P_u(n))$ est strictement croissante. En déduire que dans ce cas $P_u(n) \geq n+1$ pour tout $n\in\mathbb{N}$.
+%				Un mot tel que $P_u(n) = n+1$ pour tout $n\in\mathbb{N}$ est un mot sturmien, ce sont les mots d ecomplexité minimale parmi les mots non ultimement périodiques.
+%			\item Montrer que si $u$ est un mot sturmien alors pour tout $p$, $v  = u_p u_{p+1}\ldots$ est un mot sturmien. En déduire que tout mots finis de $u$ apparaît une infinité de fois.
+%		\end{enumerate}
+%		\subsection{Partie C. Le théorème d'Hedlund-Morse}
+%		On note $u$ un mot non ultimement périodique. On se propose de démontrer l'équivalence entre $(P_1)$, $u$ est un mot sturmien et $(P_2)$, pour tout mot $w,\,\, w_1$ de $u$ tels que $|w|=|w_1|$, on a $||w|_a-|w_1|_a|\leq 1$.
+%		\begin{enumerate}
+%			\item Montrer que dans un mot sturmien $u$ une des séquences $aa$ ou $bb$ n'est pas un mot de $u$. On supposera pour toute la suite de cette partie que $aa$ n'est pas un mot de $u$.
+%			\item Montrer que dans un mot sturmien parmi les $n+1$ mots de $n$ lettres, tous les mots se prolonge à droite de manière unique en un mots de $u$ de $n+1$ lettres sauf un mot qui se prolonge d deux manières différentes.
+%			\item On suppose que $(P_2)$ est vérifiée. \begin{enumerate}
+%				\item Calculer $P_u(0)$, $P_u(1)$ et $P_u(2)$.
+%				\item On note $n$ un entier supérieur ou égal à $2$ et on suppose que $P_u(k) = k+1$ pour tout $k\leq n$, montrer que si $P_u(n+1)\geq n+3$ alors il existe deux mots distincts $m_1,\,\, m_2$ de $n$ lettres tels que $m_1a$, $m_1b$, $m_2a$, $m_2b$ sont des mots de $u$. Obtenir une contradiction.
+%				\item En déduire que $P_2 \Longrightarrow P_1$.
+%			\end{enumerate}
+%			On suppose à présent que $u$ est un mot sturmien. On raisonne par l'absurde et on suppose que la propriété $P_2$ n'est pas vérifiée.
+%		\item On montre la présence d'nu palindrome dans le mot $u$.
+%			\begin{enumerate}
+%				\item Montrer qu'li existe deux mots de $u$, $m$ et $m_1$ de même longueur tels que $||m|_a-|m_1|_a|\geq 2$. On note désormais $w$ et $w_1$ deux mots de longueurs minimal tels que $||w|_a-|w_1|_a|\geq 2$.
+%				\item Montrer qu'il existe $w'$, $w'_1$ deux mots de $u$ tels que $(w,\,\, w_1) = (aw'a,\,\, bw'_1b)$ ou $(w,\,\, w_1) = (bw'b,aw'_1a)$. Par exemple pour la suite, $w=aw'a$.
+%				\item Montrer que $w' = w_1'$, puis montrer que $w'$ est un palindrome. On note $n = |w'|$.
+%				\item Montrer qu'un et un seul des mots $aw'b$, $bw'a$, n'est pas un mot de $u$. Par exemple, on supposera que $bw'a$ n'en est pas un.
+%			\end{enumerate}
+%		\item le prof d'alix baise sa daronne
+%	\end{enumerate}
+\end{document}

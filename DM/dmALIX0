@@ -1,0 +1,52 @@
+1.2. 
+    1. (a) : I_alpha = Ker phi_alpha où phi_alpha est le morphisme d'évaluation : Q[X] -> C, phi_alpha(Q) = Q(alpha). C'est donc à fortiori un sous-groupe de Q[X].
+       (b) : la partie de N (le polynome nul a été retiré) {deg Q : Q in I_alpha\{0}} est non vide étant donné que alpha est algébrique. Notons mu_alpha un polynome unitaire de degré minimal.
+       (c) : I_alpha est un idéal puisque fa Q in Q[X], S in I_alpha, S(alpha)Q(alpha) = 0. Soit U in I_alpha, alors écrivons la division euclidienne de U par mu_alpha,
+ on a mu_alpha Q + R = U pour Q in Q[X] et deg Q < deg mu_alpha. De plus, on a remarqué que mu_alpha Q in I_alpha, ainsi R in mu_alpha, par minimalité de deg mu_alpha, on a R = 0. 
+       (d) : mu_alpha Q[X] subset I_alpha et inversement d'après (c), donc I_alpha = mu_alpha Q[X]. Soit mu'_alpha in Q[X] : mu'_alpha Q[X] = I_alpha, alors mu'_alpha P = mu_alpha pour P in Q[X]. Puis par degré, P est une constante, autrement dit les deux sont associées. Les deux étant unitaires, on en déduit que mu_alpha = mu'_alpha.
+    2. Soit p/q une racine de mu_alpha, alors mu_alpha/(X-p/q) est encore dans Q[X] (faire une division euclidienne), et est de degré strictement inférieur à mu_alpha et est encore dans I_alpha, absurde. Soit beta in C une racine multiple de mu_alpha, alors X-beta | mu_alpha ^ mu_alpha' = Q. Ainsi Q | mu_alpha et Q in Q[X] d'après l'algorithme d'euclide. Ainsi il existe R in Q[X] : QR = mu_alpha, puis nécessairement Q(alpha) = 0 ou R(alpha) = 0. Si Q(alpha) = 0, alors alpha est une racine au moins double, donc mu_alpha'(alpha) = 0, de degré strictement inférieur à mu_alpha. Absurde. Ainsi nécessairement R(alpha) = 0, or deg Q >= 1 puisque X-beta | Q, donc deg R < deg mu_alpha. Absurde.
+    3. On note d le degré de mu_a.
+       (a) : Posons P = lcm(a_1, ..., a_d)mu_alpha où (a_i) sont les dénominateurs des coefficients rationnels de mu_alpha. P convient.
+       (b) : Soit p/q in Q, alors mu_alpha n'ayant aucune racine rationnelle, P non plus, à fortiori p/q n'est pas racine de P. Aussi, P(p/q) = (a_dp^d + a_{d-1}p^{d-1}q + ... + a_0q^d}/q^d. Les termes au nominateur sont bien sûr entiers. On en déduit l'inégalité.
+    4. Soit p/q un rationnel de [alpha-1, alpha+1]. 
+        (a) : D'après le T.A.F, il existe c_{p,q} in [alpha-1,alpha+1] : (P(p/q)-P(alpha))/(p/q-alpha) = P'(c_{p,q}). Cela fournit le résultat.
+        (b) : P' est bien évidemment continue sur [alpha-1,alpha+1], qui est un segment. Son image par P' est donc aussi un segment et ses bornes sont atteintes (théorème des bornes). Supposons par l'absurde que
+C = 0. Alors P' s'annule une infinité de fois sur R, ainsi P' = 0 puis P = constante, puis P = 0, absurde.
+        (c) : Soit p/q in Q, si C>= 1, alors |alpha-p/q| = |P(p/q)/P'(c_{p,q}| >= 1/Cq^d = C'/q^d, d'après les questions précédentes. Aussi, si C in ]0, 1[, alors |alpha-p/q|>|P(p/q)| >= 1/q^d = C'/q^d.
+ 
+2.1.
+    1. Q[alpha] = phi_alpha[Q[X]] où phi_alpha est le morphisme d'évaluation qui se trouve être ici un morphisme d'anneau.
+    2. (a) : On a déjà que (Q[alpha], +, x) est un anneau, il ne reste qu'à montrer sur . (iso à x) qui sont évidentes.
+       (b) : Soit x in Q[alpha], alors il existe P_n in Q[X) de degré n tel que P_n(alpha) = x. Si n < d alors rien à démontrer, supposons donc que n >= d, écrivons P_n = sum_{k=0}^n a_k X^k. On dispose aussi de mu_alpha = sum_{k=0, d} b_k X^k. On a les relations suivantes : 
+		0 = sum_{k=0, d} b_k alpha^k; x = sum_{k=0, n} a_k alpha^k, on en déduit que a_n alpha^n = a_n alpha^(n-d) (-1/b_d sum_{k=0, d-1} b_k alpha^k}.
+	   En posant P_{n-1} = P_n - a_n/b_d X^(n-d) mu_alpha. Alors  P_{n-1}(alpha) = x et P_{n-1} est de degré n-1. 
+	   On réitère ce raisonnement jusque ce que n < d, et alors P_{d-1} convient.
+
+	   Sinon, être moins stupide et faire la division euclidienne de P par mu_alpha, alors mu_alphaQ + R = P, où R, Q in Q[X] et deg Q < deg mu_alpha, de plus R(alpha) = P(alpha) = x.
+       (c) : Le caractère générateur est l'object de la question précédente. Soit l_1, ..., l_{d-1} des rationnels tq l_1 + ... + l_d alpha^{d-1} = 0, alors on dispose d'un polynome de degré inférieur à mu_d qui annule alpha, absurde par minimalité de mu_d. 
+       (d) : f est clairement linéaire, soit x tq xx_0 = 0, alors x = 0 car x_0 != 0. Ainsi f est injective puis surjective car c'est un endormorphisme d'un espace de dimension finie. Ainsi 1 a un antécédent par f ce qui prouve l'existence de x_0^(-1) dans Q[alpha]. Ainsi f est bien un corps.
+
+2.2.
+    1. fa c in Q\{(alpha_i-alpha)/(beta_j-beta), i,j in ..}, le résultat est vrai. Pour c = 0, on trouve en i = 1, alpha != alpha, absurde.
+    2. Par le binome de Newton, on développe pour se ramener à des Q-combinaisons linéaires de (alpha^i beta^j), notons ce polynome en X, Y. Notons P(x, y) = x+cy in Q[X, Y]. Alors Q = P-Z in Q[X, Y][Z] est tel que Q(alpha, beta, z) = 0, ainsi z est algébrique. 
+    3. mu(z-cX) par le binôme de Newton a des coefficients de la forme (qz)^i, q rationnel, pour i in [0, deg mu_z], qui est une famille génératrice de Q[alpha]. 
+    4. (a) :  Les coefficients de P sont dans Q[z] et ceux de Q aussi puisque les beta^j pour j entre [0, q] font partie  de la base de Q[z]. Par l'algorithme de la division euclidienne, P ^Q est un polynome à coefficients dans Q[z]. 
+       (b) : L'algorithme d'Euclide permet de calculer Delta, or celui-ci n'est qu'une combinaison de restes de divisions euclidiennes dont le premier est celui de P par Q, qui est dans Q[z], une récurrence immédiate permte d'affirmer que Delta est un polynome à coefficients dans Q[z].
+       (c) : On vérifie facilement que P(beta) = mu_alpha(alpha) = 0 et Q(beta) = mu_beta(beta) = 0, ainsi X-beta | Delta. Or d'après le choix de c, les deux familles alpha, alpha_2, ..., alpha_d et beta_2, ..., beta_q, ne peuvent contenir une racine qui soit commune à P et Q. De plus, on sait que beta est une racine simple de P. Ainsi D = X-beta.
+       (d) : D'après (b), beta in Q[z], le même raisonnement peut-être effectuer symétriquement, choisir un c in Q tq fa (i,j) in [2, d]x[1,q], calpha_i+beta_j != calpha+beta_, puis poser P(X) = mu_a(X), Q(X)=mu_b(z-cX), alors on montrera que D = P ^Q = X-alpha est dans Q[z] puis alpha in Q[z]. Sinon la structure de Q-ev de Q[z], nous dit que z-cb = alpha in Q[z].
+   5. Soit x in Q[alpha, beta], il existe P in Q[X, Y] : x = P(alpha, beta), or alpha, beta in Q[z], donc il existe P, R in Q[X], R[Y] : alpha = Q[z], beta = R[z], puis x = P(Q(z), R(z)) in Q[z]. Soit x in Q[z], alors il existe P in Q[X] : x = P(z) = P(alpha + c beta) = PQ(alpha, beta) avec Q[Y, Z] = Y+cZ.
+   6. 
+
+2.3 
+   1. On résous l'équation (j-s)^2-2 = 0, on trouve s = -+ sqrt(2)+j.
+   2. Les racines sont donc s = +- sqrt2)+j.
+   FLEMME
+
+3.
+  1. Soit k in [0, n-1]. U_n iso à Z/nZ grâce à l'isomorphisme : Z/nZ -> U_n : k -> e^(2ipik/n) (on vérifie que c'est un morphisme, qu'il est injectif te que les cardinaux sont égaux). Or un élément k de Z/nZ est générateur de Z/nZ ssi il existe r in Z/nZ : rk = 1, équivalent à il existe q in Z tel que rk + qn = 1, ce qui est équivalent par le théorème de Bezout à ce que k et n soient premiers entre-eux.
+  2. Toujours en exploitant l'isormophie, soient m, n deux entiers premiers entre-eux, alors le théorème des restes chinois nous dit que Z/mZ x Z/nZ isomorphe à Z/nmZ, un isomorphisme est Z/mnZ -> Z/mZ x Z/nZ, u -> (u [m], u[n]). On prouve l'injectivité de manière évidente, si u : u divisible par m et u divisible par n alors u est divisible par mn, d'où u = 0. Les cardinaux sont égaux. De plus, c'est la réciproque de l'application u, v -> uv. Cela prouve que l'application citée est une bijection et donc phi(nm) = phi(n)phi(m).
+  3. [1, n] = sqcup_{d|n} {k in [1, d-1] : k ^ d = 1} (ave cles fractions). On en déduit que le degré du polynome est n.
+  4. (a) : Soit alpha une racine multiple de X^n - 1, alors nécessairement nalpha^(n-1)  = 0, d'où alpha = 0, or alpha n'est pas racine de X^n - 1.
+     (b) : D'après la bijection énoncée en 3, soit k in [0, n-1] alors il existe un unique diviseur d de n tel que k et d soient premiers entre-eux, i.e e^(2ikpi/n) est dans Z_d, i.e il annule phi_d. Finalement les racines de X^n - 1 sont racines du polynome à droite et par degré et égalité sur le coefficient dominant, on obtient l'égalité.
+     (c) : C'est une récurrence. L'initialisation est vraie en n = 1. Supposons que la propriété est vraie pour phi_{n-1}, ..., phi_{1}, en particulier cela est vraie pour les diviseurs stricts de n, or X^n - 1 = phi_n(X) prod_{d|n, d != n} phi_d(X), donc phi_n(X) est le résultat de la division euclidienne de deux polynomes dans Z[X]. Ainsi phi_n est dans Z[X]. 
+  5. (a) : Supposons que phi_m(a) = 0 dans F_p, alors nécessairement X^m - 1 = phi_m(X) prod_{d|m, d!=m} phi_d(X) a pour racine a dans F_p. Ainsi a^m = 1. Supposons que p | a, alors il est clair que a^m = 0, absurde. Soit d le plus petit diviseur de m tel que a^d = 1 mod p. Alors puisque a est racine de X^d - 1 = phi_d(X) \prod_{d'|d, d' != d} phi_d'(X) et que d est le diviseur minimal de m qui respecte cette condition, alors phi_d(a) = 0. Mezalors X^m - 1 / phi_d(X) n'admet plus pour racine a dans F_p puisque X^m - 1 n'admet que des racines simples. Mezalors phi_m(a) != 0 dans F_p, absurde. 
