@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{amssymb}
+\newcommand{\mc}{\multicolumn{1}{c}}
+
+\renewcommand{\arraystretch}{1.5}
+\usepackage{nicematrix}
+\usepackage{amsthm}
+\usepackage{indentfirst}
+\usepackage{stmaryrd}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\begin{document}
+\title{Colles du premier trimestre}
+\author{YLF}
+\date{Oct et plus, 2019}
+\maketitle
+
+\section{Semaine I : Algèbre générale}
+\subsection*{Enoncés}
+\subsubsection*{Exercice 1 (Sander).}
+Démontrer que $(\mathbb{U}(\mathbb{Z}/p\mathbb{Z}), \times)$ est cyclique.
+\subsection*{Solutions}
+\subsubsection*{Exercice 1.}
+On sait que $\mathbb{U}(\mathbb{Z}/p\mathbb{Z}) = \mathbb{Z}/p\mathbb{Z}\backslash\{0\}$, il faut donc montrer l'existence d'un élément d'ordre $(p-1)$. Ecrivons $p-1 = p_1^{\alpha_1}\ldots p_n^{\alpha_n}$, la décomposition en facteurs premiers de $p-1$. Montrons qu'il existe un élément d'ordre $p_i^{\alpha_i}$ et cela pour tout $i\in\llbracket 1;n \rrbracket$.
+...
+
+Le produit de ces éléments est alors d'ordre $n-1$. Le résultat exposé est en vérité plus général, pour tout corps $K$, son groupe multiplicatif est cyclique et la démonstration est similaire.
+\section{Semaine III : Analyse générale}
+\subsection*{Enoncés}
+\subsubsection*{Exercice 1 (Franklin).}
+Posons
+\begin{align*}
+	\Delta : \left\{
+		\begin{array}{@{}l@{\thinspace}l}
+			\mathcal{F}(\mathbb{R}) \to \mathcal{F}(\mathbb{R})\\
+			f \mapsto x \mapsto f(x+1)-f(x)
+		\end{array}
+		\right.
+	\end{align*}
+	\begin{enumerate}
+		\item Montrer que pour tout $p\in \mathbb{N}$ et pour toute fonction $f \in \mathcal{C}^p(\mathbb{R})$, $x\in\mathbb{R}$, il existe $y \in [x;x+p]$  tel que $\Delta^p(f)(y) = f(x)$.
+		\item Soit $\alpha \geq 0$ tel que pour tout $n\in\mathbb{N}$, $n^{\alpha} \in\mathbb{N}$. Que dire de $\alpha$ ?
+	\end{enumerate}
+\section{Semaine IV : Espaces vectoriels normés}
+\subsection*{Exercice 1 (Houkari).}
+Posons $E = \{f \in \mathcal{C}^{3}([0, 2], \mathbb{R}) : f(0) = f(1) = f(2)\}$ et $N : f \mapsto ||f^{(3)}||_{\infty, [0,2]}$. \begin{enumerate}
+	\item Montrer que $N$ est une norme sur $E$.
+	\item L'application $\displaystyle f\mapsto \int_{0}^2 f(t)\mathrm{d}t$ est-t-elle continue ?
+\end{enumerate}
+\subsection*{Solutions}
+\subsubsection*{Exercice 1}
+La première question ne pose aucune difficulté. L'application étudiée est linéaire, pour montrer qu'elle est continue, il suffit donc de montrer qu'elle est lipschitzienne en $0$. Autrement dit, peut-t-on trouver une constante $K>0$ telle que 
+\begin{align*}
+	\forall f \in E, \,\,\, \bigg|\int_{0}^2 f^{(3)}(t)\mathrm{d}t\bigg|\leq K ||f^{(3)}||_{\infty, [0,2]}
+\end{align*}
+
+Soit $f \in E$, l'intégration de l'inégalité de Taylor Lagrange assure que, 
+\begin{align*}
+	\bigg|\int_{0}^2 f(t)\mathrm{d}t\bigg|\leq \int_{0}^2 |f(t)|\mathrm{d}t\leq \int_{0}^2 (t|f'(0)| + \frac{t^2}{2}|f''(0)|+\frac{t^3}{6}|f^{(3)}(0)|)\mathrm{d}t
+\end{align*}
+
+Le théorème de Rolle appliqué deux fois assure l'existence de deux réels dans $[0, 2]$, $x_0, x_1$ tels que $f'(x_0) = 0$ et $f''(x_1) = 0$. Ainsi, 
+\begin{align*}
+	f''(0) = \int_{x_1}^{0}f^{(3)}(t)\mathrm{d}t\\
+	f'(0) = \int_{x_0}^{0} \int_{x_1}^{x}f^{(3)}(t)\mathrm{d}t \mathrm{d}x
+\end{align*}
+
+Ainsi, on peut écrire directement que $|f'(0)| \leq 4||f^{(3)}||_{\infty}$ et $|f''(0)|\leq 2||f^{(3)}||_{\infty}$. Après majoration, on trouve que $K = (8+8/6\times 2+16/24)$ convient.
+
+\section{Semaine V : Espaces vectoriels normés}
+\subsection*{Enoncés}
+\subsubsection*{Exercice 1 (Mme Santoni).}
+Soit $B \in\mathbb{M}_p(\mathbb{C})$ telle que $(B^k)_k$ est bornée. Montrer que pour tout $n\in\mathbb{N}$, $A_n = \displaystyle \frac{1}{n+1}\sum_{k=0}^n B^k$ admet une valeur d'adhérence, notée $A$ et que $A^2 = A$.
+\subsection*{Solutions}
+\subsubsection*{Exercice 1.}
+Notons $M$ un majoration de la suite $(B^k)_k$ pour une certaine norme (dim. finie), alors $(A_n)$ est majorée par $M$. Par le théorème de Bolzano-Weierstrass, $A_n$ admet une sous-suite, disons $(A_{\varphi(n)})$, convergeante vers $A$.
+
+$BA = A$, en effet
+\begin{align*}
+	B A_{\varphi(n)} = A_{\varphi(n)} + \frac{1}{\varphi(n)+1}(B^{\varphi(n)+1} - B) \to A
+	\end{align*}
+
+	Puis $B^{k}A = A$, pour tout $k\in\mathbb{N}$ par récurrence immédiate. Enfin, en revenant à l'expression de $A_n$ et en la multipliant par $A$,
+	\begin{align*}
+		A_nA =A
+	\end{align*}
+
+	Par passage à la limite, le résultat est obtenu.
+	\end{document}
+
