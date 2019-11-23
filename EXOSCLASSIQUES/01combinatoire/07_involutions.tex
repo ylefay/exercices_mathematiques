@@ -14,7 +14,7 @@
 \date{Juin 2019}
 \maketitle
 \section*{Enoncé}
-Soit $\mathfrak{I}_n = \{\sigma\in \mathfrak{S}_n : \sigma^2 = \textup{Id}_n\}$, calculer $|\mathfrak{I}_n|$. Généraliser à $\mathfrak{I}_n^m = \{\sigma \in\mathfrak{S}_n : \sigma^m = \textup{Id}_n\}$.
+Soit $\mathfrak{I}_n = \{\sigma\in \mathfrak{S}_n : \sigma^2 = \textup{Id}_n\}$, calculer $|\mathfrak{I}_n|$. Généraliser à $\mathfrak{I}_n^m = \{\sigma \in\mathfrak{S}_n : \sigma^m = \textup{Id}_n\}$. Calculer le nombre d'éléments d'ordre $p$ dans $\mathfrak{S}_{2p}$ avec $p$ premier.
 \section*{Solution}
 Soit $\sigma\in\mathfrak{I}_n$, notons $k=|\textup{supp }\sigma|$, $k$ est clairement pair, de plus, on a nécessairement
 \begin{align*}
@@ -30,7 +30,7 @@ n-2j\\2
 
 On trouve donc au final,
 \begin{align*}
-|\mathfrak{I}_n| = \sum_{k=0, \, k \in 2\mathbb{N}}\frac{1}{(k/2)!}\prod_{j=0}^{k/2-1}\begin{pmatrix}n-2j\\2\end{pmatrix}
+|\mathfrak{I}_n| = \sum_{k=2, \, k \in 2\mathbb{N}}\frac{1}{(k/2)!}\prod_{j=0}^{k/2-1}\begin{pmatrix}n-2j\\2\end{pmatrix}
 \end{align*}
 
 
@@ -45,6 +45,18 @@ puis
 \end{align*}
 
 Non ! La généralisation précédente est totalement fausse, et pour cause, on peut essayer pour $m = n$, on devrait trouver $|\mathfrak{I}_n^n| = n!$, mais on trouve $2$ à la place. La première expression qu'on donne pour les involutions ne se généralise pas aussi facilement, il semble qu'aucune formule explicite pour $|\mathfrak{I}_n^m|$ n'ait été trouvée. 
+
+Soit $\sigma\in \mathfrak{S}_{2p}$, un élément d'ordre $p$, alors on sait que $\sigma$ se décompose de manière unique à l'ordre prêt, comme un produit de cycles, dont l'ordre est le produit des plus petits communs multiples. Cela ne laisse que deux possibilités, soit il est de taille $p$, soit il est le produit de deux cycles de taille $p$. Pour le premier choix, on a $\begin{pmatrix}2p\\p\end{pmatrix}(p-1)!$ choix, pour le second, on a $\begin{pmatrix} 2p\\p\end{pmatrix}(p-1)!^2/2$, où la divison par 2 provient du fait que le produit commute. Ainsi, 
+
+\begin{align*}
+	|\{\sigma\in \mathfrak{S}_{2p} : o(\sigma)=p\}| = \begin{pmatrix} 2p\\p\end{pmatrix}(p-1)!(1+(p-1)!/2)
+\end{align*}
+
+Plus généralement, le nombre d'éléments d'ordre $p$ dans $\mathfrak{S}_{lp}$ est 
+\begin{align*}
+	\sum_{k=1}^l \frac{(p-1)!^k}{k!}\prod_{j=0}^{k-1}\begin{pmatrix} p(l-j)\\p\end{pmatrix}
+\end{align*}
+
 \QED
 
 \end{document}

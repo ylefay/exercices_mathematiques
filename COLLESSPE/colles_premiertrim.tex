@@ -14,6 +14,8 @@
 \usepackage{mathtools}
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\diag}{Diag}
 \begin{document}
 \title{Colles du premier trimestre}
 \author{YLF}
@@ -26,7 +28,8 @@
 Démontrer que $(\mathbb{U}(\mathbb{Z}/p\mathbb{Z}), \times)$ est cyclique.
 \subsection*{Solutions}
 \subsubsection*{Exercice 1.}
-On sait que $\mathbb{U}(\mathbb{Z}/p\mathbb{Z}) = \mathbb{Z}/p\mathbb{Z}\backslash\{0\}$, il faut donc montrer l'existence d'un élément d'ordre $(p-1)$. Ecrivons $p-1 = p_1^{\alpha_1}\ldots p_n^{\alpha_n}$, la décomposition en facteurs premiers de $p-1$. Montrons qu'il existe un élément d'ordre $p_i^{\alpha_i}$ et cela pour tout $i\in\llbracket 1;n \rrbracket$.
+On sait que $\mathbb{U}(\mathbb{Z}/p\mathbb{Z}) = \mathbb{Z}/p\mathbb{Z}\backslash\{0\}$, il faut donc montrer l'existence d'un élément d'ordre $(p-1)$. Ecrivons $p-1 = p_1^{\alpha_1}\ldots p_n^{\alpha_n}$, la décomposition en facteurs premiers de $p-1$. Il faut montrer qu'il existe un élément d'ordre $p_i^{\alpha_i}$ et cela pour tout $i\in\llbracket 1;n \rrbracket$.
+
 ...
 
 Le produit de ces éléments est alors d'ordre $n-1$. Le résultat exposé est en vérité plus général, pour tout corps $K$, son groupe multiplicatif est cyclique et la démonstration est similaire.
@@ -91,5 +94,44 @@ $BA = A$, en effet
 	\end{align*}
 
 	Par passage à la limite, le résultat est obtenu.
+
+	\section{Semaine VII : Séries et Algèbre linéaire}
+	\subsection*{Enoncés}
+	\subsubsection*{Exercice 1 (Antoine Le Calvez).}
+	Nature de $\sum \frac{e^{i\sqrt{n}}}{n}$ ?
+	\subsubsection*{Exercice 2 (Antoine Le Calvez).}
+	Soit $E$ un $\mathbb{K}$-ev de dimension $n$, trouver une famille libre de projecteurs de $E$ libre de cardinal maximum.
+	\subsubsection*{Exercice 3 (Antoine Le Calvez).}
+	Equivalent de $\sum (-1)^{n-1} \floor{\frac{n}{k}}$.
+	\subsection*{Solutions}
+	\subsubsection*{Exercice 1.}
+Une méthode, posons pour tout $x \in \mathbb{R}^{+}$, $f(x) = \frac{e^{i\sqrt{x}}}{x}$ et calculons $||f'||_{\infty, \llbracket n; n+1\rrbracket}$ pour tout $n\in \mathbb{N}^*$. On obtient que $f'(x) = i\frac{e^{i\sqrt{x}}}{x^{3/2}} = O(x^{-3/2})$. Ainsi, $\sum ||f'||_{\infty}$ converge par Riemann. Utilisons donc la comparaison intégrale sur le reste 
+\begin{align*}
+	\sum \frac{e^{i\sqrt{n}}}{n} \sim \int \frac{e^{i\sqrt{x}}}{x}\mathrm{d}x = 2\int \frac{e^{i u}}{u}\mathrm{d}u 
+\end{align*}
+
+Aussi, $\frac{\mathrm{d}}{\mathrm{d}u} \frac{e^{iu}}{u} = \frac{e^{iu}}{u}$ et $\sum \frac{e^{i u}}{u}$ converge par le critère d'Abel. Ainsi, la série converge.
+
+\subsubsection*{Exercice 3.}
+	On obtient facilement $n\ln 2$.
+	\section{Semaine VIII : Algèbre linéaire}
+	\subsection*{Enoncés}
+	\subsubsection*{Exercice 1 (Sander).}
+	Déterminer l'ensemble des matrices $A\in \mathcal{M}_n(\mathbb{K})$ telles que pour tout $B\in\mathcal{M}_n(K)$, $\det A + B = \det A + \det B$.
+	\subsection*{Exercice 2 (Sander).}
+	Montrer que 
+	\begin{align*}
+		\forall \varphi \in \mathcal{M}_n(\mathbb{K})^*, \exists !A\in \mathcal{M}_n(\mathbb{K}) : \varphi = (X\mapsto \Tr(AX))
+	\end{align*}
+	Puis montrer que tout hyperplan de $\mathcal{M}_n(\mathbb{K})$ coupe $\mathcal{GL}_n(\mathbb{K})$.
+	\subsubsection*{Exercice 3 (Sander).}
+	Montrer que pour tout $A,\, B \in\mathcal{M}_n(\mathbb{K})$, $\det A^2 + B^2$ est positif.
+	\subsection*{Solutions}
+	\subsubsection*{Exercices 1, 2, 3}
+	En posant $B = A$, on constate qu'ou bien $n=1$ ou bien $\det A = 0$. Si $\det A = 0$, alors on peut noter $r$ son rang, et alors $A = (C_1|\ldots|C_r|C^*_{r+1}|\ldots C^*_n)$ où disons pour simplifier sans que cela change quoi que ce soit au problème, que les $r$ premières colonnes sont libres. Complétons-les en une base de $\mathcal{M}_n(\mathbb{K})$, disons $(C_1, \ldots, C_n)$, alors posons $B = (0|\ldots|0|C_{r+1}|\ldots|C_n)$. Alors $\det A + B \neq 0$ et $\det B = 0$ si $r\geq 1$, si $r=0$ alors $A = 0$ et la propriété est vraie. Finalement, seule $A=0$ convient.
+
+	Exercice classique, on pose l'endormorphisme $\psi : A \mapsto (X\mapsto \Tr(AX))$. On prouve que celle-ci est injective en utilisant les $E_{ij}$, en effet, $Tr(AE_{i,j}) = a_{j,i}$. Ainsi, $\psi$ est un isomorphisme, ce qui répond au problème. On utilise la caractérisation précédente et on se ramène aux matrices $J_r$. Par une analyse, on obtient que $B = \diag(1, \ldots, 1, -r+1, 1, \ldots 1)\in\mathcal{GL}_n(K)$ est telle que $\Tr(J_rB) = 0$. 
+
+	On voit que $\det A^2 + B^2 = \det A-iB \det A+iB$, l'un est le conjugué de l'autre, c'est donc un nombre positif.
 	\end{document}
 

@@ -1,7 +1,14 @@
 .
+├── COLLESSPE
+│   ├── colles_premiertrim.pdf
+│   └── colles_premiertrim.tex
 ├── COLLESSUP
 │   ├── colles_secondtrim.pdf
 │   └── colles_secondtrim.tex
+├── DM
+│   ├── dmALIX0
+│   ├── dmALIX0.pdf
+│   └── dmALIX0.tex
 ├── EXOSCLASSIQUES
 │   ├── 01combinatoire
 │   │   ├── 01_derangements.pdf
@@ -42,10 +49,13 @@
 │   │   ├── 11_lemmedecauchy.pdf
 │   │   ├── 11_lemmedecauchy.tex
 │   │   ├── 12_groupesprufer.pdf
-│   │   └── 12_groupesprufer.tex
+│   │   ├── 12_groupesprufer.tex
+│   │   └── test.tex
 │   ├── 03polynomes
 │   │   ├── 01_prodsinkpin.pdf
-│   │   └── 01_prodsinkpin.tex
+│   │   ├── 01_prodsinkpin.tex
+│   │   ├── 02_dalembertgauss.pdf
+│   │   └── 02_dalembertgauss.tex
 │   ├── 04algebrelineaire
 │   │   ├── 01_indicenilpotencedimfinie.pdf
 │   │   ├── 01_indicenilpotencedimfinie.tex
@@ -67,7 +77,9 @@
 │   │   ├── 02_primorielle.pdf
 │   │   ├── 02_primorielle.tex
 │   │   ├── 03_sommephid.pdf
-│   │   └── 03_sommephid.tex
+│   │   ├── 03_sommephid.tex
+│   │   ├── 04_carresdeFp.pdf
+│   │   └── 04_carresdeFp.tex
 │   ├── 06topologie
 │   │   ├── 01ouvertsdercaracterisation.pdf
 │   │   └── 01ouvertsdercaracterisation.tex
@@ -84,4 +96,4 @@
 ├── r.sh
 └── tree
 
-10 directories, 74 files
+12 directories, 84 files
