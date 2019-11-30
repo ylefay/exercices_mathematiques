@@ -88,12 +88,17 @@
 │   │   ├── 01_smith.tex
 │   │   ├── 02_vandermondelacunaire.pdf
 │   │   └── 02_vandermondelacunaire.tex
-│   └── 08inegalites
-│       ├── 01_tchebychev2.pdf
-│       ├── 01_tchebychev2.tex
-│       ├── 02_rearrangements.pdf
-│       └── 02_rearrangements.tex
+│   ├── 08inegalites
+│   │   ├── 01_tchebychev2.pdf
+│   │   ├── 01_tchebychev2.tex
+│   │   ├── 02_rearrangements.pdf
+│   │   └── 02_rearrangements.tex
+│   └── 08reduction
+│       ├── 01_trAp.pdf
+│       ├── 01_trAp.tex
+│       ├── 02_composition.pdf
+│       └── 02_composition.tex
 ├── r.sh
 └── tree
 
-12 directories, 84 files
+13 directories, 88 files

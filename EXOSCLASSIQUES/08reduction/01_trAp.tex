@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\tr}{Tr}
+\begin{document}
+\title{FICHE 08-01 : $\tr(A^p)$}
+\author{Yvann Le Fay}
+\date{Novembre 2019}
+\maketitle
+\section*{Enoncé}
+Soit $A\in \mathcal{M}_n(\mathbb{K})$, montrer que 
+
+\begin{align*}
+	\forall p \in \mathbb{N}^*, \tr{A^p} = 0 \Longleftrightarrow A \textup{ est nilpotente}.
+\end{align*}
+\section*{Solution}
+Si $A$ est nilpotente alors $A$ est semblable à une matrice triangulaire supérieure et le résultat est vrai.
+
+Supposons que pour tout $p\in \mathbb{N}^*, \tr{A^p} = 0$ et que $A$ n'est pas nilpotente. Notons $\lambda_1, \ldots, \,\lambda_r$ ses valeurs propres distinctes non nulles et $\alpha_1, \ldots, \,\alpha_r$ les multiplicités associées. La trigonalisation de $A$ montre que $A^p$ admet $\lambda_1^p, \ldots, \,\lambda_r^p$ comme valeurs propres et alors $A^p$ est semblable à 
+\begin{align*}
+	\begin{pmatrix}
+		\diag\{\lambda_1^p, \ldots\} & B_p \\
+		0 & L^p
+	\end{pmatrix}
+\end{align*}
+
+avec $L$ une matrice triangulaire supérieure stricte, donc $\tr A^p = \sum_{i=1}^r \lambda_i^p \alpha_i = 0$, ceci pour tout $p\in \mathbb{N}^*$. Ce système est un système de Vandermonde (et donc en vérité, pour $p\in \llbracket 1; n+1\rrbracket$ suffit), on en déduit que $\alpha_1 = \ldots  = \alpha_p = 0$ et donc $A$ n'a que des valeurs propres nulles, i.e $A$ est nilpotente. 
+
+\QED
+\end{document}

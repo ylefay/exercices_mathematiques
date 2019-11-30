@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{french}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=1.5cm}
+\newcommand*{\QED}{\hfill\ensuremath{\blacksquare}}%
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\tr}{Tr}
+\DeclareMathOperator{\Sp}{Sp}
+\begin{document}
+\title{FICHE 08-02 : Sur la composition}
+\author{Yvann Le Fay}
+\date{Novembre 2019}
+\maketitle
+\section*{Enoncé}
+Soit $g \in \mathcal{L}(E)$ avec $E$ de dimension finie. Soit $\varphi(g) : f \mapsto f\circ g$. Pour tout $\lambda\in \Sp g$, calculer $\dim E_{\lambda}(\varphi(g))$. Montrer que $g$ est diagonalisable si et seulement si $\varphi(g)$ l'est.
+\section*{Solution}
+On a 
+\begin{align*}
+	f \in E_{\lambda}(\varphi(g)) \Longleftrightarrow g \circ f = \lambda f \Longleftrightarrow \im f \subset E_{\lambda}(g)
+\end{align*}
+
+On en déduit donc que $\dim E_{\lambda}(\varphi(g)) = n\dim E_{\lambda}(g)$ et ainsi $n^2 = \sum_{\lambda\in \Sp\varphi(g)} \dim E_{\lambda}\varphi(g) \Longleftrightarrow n = \sum_{\lambda \in \Sp g} \dim E_{\lambda}g$, i.e $\varphi(g)$ est diagonalisable si et seulement si $g$ l'est. 
+\QED
+\end{document}

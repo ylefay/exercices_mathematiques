@@ -16,6 +16,8 @@
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclareMathOperator{\Tr}{Tr}
 \DeclareMathOperator{\diag}{Diag}
+\DeclareMathOperator{\adh}{Adh}
+\DeclareMathOperator{\inte}{Int}
 \begin{document}
 \title{Colles du premier trimestre}
 \author{YLF}
@@ -133,5 +135,52 @@ Aussi, $\frac{\mathrm{d}}{\mathrm{d}u} \frac{e^{iu}}{u} = \frac{e^{iu}}{u}$ et $
 	Exercice classique, on pose l'endormorphisme $\psi : A \mapsto (X\mapsto \Tr(AX))$. On prouve que celle-ci est injective en utilisant les $E_{ij}$, en effet, $Tr(AE_{i,j}) = a_{j,i}$. Ainsi, $\psi$ est un isomorphisme, ce qui répond au problème. On utilise la caractérisation précédente et on se ramène aux matrices $J_r$. Par une analyse, on obtient que $B = \diag(1, \ldots, 1, -r+1, 1, \ldots 1)\in\mathcal{GL}_n(K)$ est telle que $\Tr(J_rB) = 0$. 
 
 	On voit que $\det A^2 + B^2 = \det A-iB \det A+iB$, l'un est le conjugué de l'autre, c'est donc un nombre positif.
+	\section{Semaine X : Réduction}
+	\subsection*{Enoncés}
+	\subsubsection*{Exercice 1 (Monier).}
+	Soit $\mathcal{D}_n(\mathbb{C})$ l'ensemble des matrices diagonalisables dans $\mathbb{C}$ et $\mathcal{D}_n^+(\mathbb{C})$ le sous ensemble de $\mathcal{D}_n(\mathbb{C})$ des matrices qui admettent $n$-valeurs propres distinctes. Déterminer l'adhérence et l'intérieur de $\mathcal{D}_n(\mathbb{C})$ et $\mathcal{D}_n^+(\mathbb{C})$.
+	\subsection*{Solutions}
+	\subsubsection*{Exerice 1}
+	Montrons $\adh \mathcal{D}_n^+(\mathbb{C}) = \adh \mathcal{D}_n(\mathbb{C}) = \mathcal{M}_n(\mathbb{C})$. Soit $A\in\mathcal{M}_n(\mathbb{C})$ alors $A$ est trigonalisable, d'où 
+	\begin{align*}
+		A \sim \begin{pmatrix}   
+  \lambda_1 & \star & \ldots & \star\\
+	    & \lambda_2 & \ddots&\vdots\\
+	    &&\ddots & \star \\
+	    & & & \lambda_n
+		\end{pmatrix} = A'
+	\end{align*}
+	et pour tout $k\in \mathbb{N}^*$, on définit 
+	\begin{align*}
+		A_k = \begin{pmatrix}
+			\lambda_1-\frac{1}{k} & \star & \ldots & \star\\
+					      & \lambda_2-\frac{2}{k} & \ddots & \vdots\\
+					      &&\ddots & \star \\
+					      & & & \lambda_n-\frac{n}{k}
+		\end{pmatrix}
+	\end{align*}
+
+	Alors $A_k\to A'$ et APCR, $A_k \in\mathcal{D}_n^+(\mathbb{C})$ car les éléments de sa diagonale finissent par tous être distincts. Comme $\mathcal{D}_n^+(\mathbb{C})\subset \mathcal{D}_n(\mathbb{C})$, on a montré l'égalité. 
+
+	Montrons que $\mathcal{D}_n^+(\mathbb{C})$ est un ouvert. Soit $A\in \mathcal{D}_n^+(\mathbb{C})$, alors \begin{align*}
+		A \sim \diag \{\lambda_1, \ldots\, \lambda_n\}, \,\, \forall i, j \in \llbracket 1; n\rrbracket, \,i\neq j \Rightarrow \lambda_i \neq \lambda_j
+	\end{align*}
+	Posons $\varepsilon = \min_{i,j} |\lambda_i-\lambda_j| \neq 0$, alors pour tout $0<r<\varepsilon$, $A-\eta I_n \in \mathcal{D}_n^+(\mathbb{C})$. Si on prend comme norme la norme infini, on obtient le résultat et puisque toutes les normes sont équivalentes en dimension finie, c'est bon.
+
+	Montrons que $\inte \mathcal{D}_n(\mathbb{C}) = \mathcal{D}_n^+(\mathbb{C})$. On a bien $\mathcal{D}_n^+\subset \inte\mathcal{D}_n(\mathbb{C})$ puisque $\mathcal{D}_n^+(\mathbb{C})$ est un ouvert inclu dans $\mathcal{D}_n(\mathbb{C})$. 
+
+	Pour l'autre inclusion, montrons que $\inte \mathcal{D}_n(\mathbb{C}) \subset \mathcal{D}_n^+(\mathbb{C})$, i.e, $\mathcal{M}_n(\mathbb{C})\backslash \mathcal{D}_n^+(\mathbb{C}) \subset \adh (\mathcal{M}_n(\mathbb{C})\backslash\mathcal{D}_n(\mathbb{C}))$, i.e $\mathcal{D}_n(\mathbb{C})\backslash\mathcal{D}_n^+(\mathbb{C})\subset \adh (\mathcal{M}_n(\mathbb{C})\backslash\mathcal{D}_n(\mathbb{C}))$. 
+
+	Soit $A\in\mathcal{D}_n(\mathbb{C})\backslash\mathcal{D}_n^+(\mathbb{C})$, alors 
+	\begin{align*}
+	A \sim \diag\{\underbrace{\lambda, \ldots, \lambda}_{p}, \lambda_1, \ldots,\, \lambda_r\}
+	\end{align*}
+
+	avec $p\geq 2$. Posons pour tout $k\in\mathbb{N}^*$, 
+	\begin{align*}
+		A_k = A + E_{1, 2}\frac{1}{k}
+	\end{align*}
+
+	Alors pour tout $k\in\mathbb{N}^*$, $A_k$ n'est pas diagonalisable car $\dim E_{\lambda}(A_k) = p-1 < p$ alors que $p$ est la multiplicité de $\lambda$ dans $\chi_{A_k}$. De plus, $A_k\to A$. Ainsi, on a prouvé que $\mathcal{D}_n(\mathbb{C})\backslash\mathcal{D}_n^+(\mathbb{C}) \subset \adh(\mathcal{M}_n(\mathbb{C})\backslash\mathcal{D}_n(\mathbb{C}))$. 
 	\end{document}
 
