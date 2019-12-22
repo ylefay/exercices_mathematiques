@@ -141,6 +141,11 @@ Aussi, $\frac{\mathrm{d}}{\mathrm{d}u} \frac{e^{iu}}{u} = \frac{e^{iu}}{u}$ et $
 	Soit $\mathcal{D}_n(\mathbb{C})$ l'ensemble des matrices diagonalisables dans $\mathbb{C}$ et $\mathcal{D}_n^+(\mathbb{C})$ le sous ensemble de $\mathcal{D}_n(\mathbb{C})$ des matrices qui admettent $n$-valeurs propres distinctes. Déterminer l'adhérence et l'intérieur de $\mathcal{D}_n(\mathbb{C})$ et $\mathcal{D}_n^+(\mathbb{C})$.
 	\subsection*{Solutions}
 	\subsubsection*{Exerice 1}
+        
+	Soit $\mathcal{D}_n(\mathbb{C})$ l'ensemble des matrices diagonalisables dans $\mathbb{C}$ et $\mathcal{D}_n^+(\mathbb{C})$ le sous ensemble de $\mathcal{D}_n(\mathbb{C})$ des matrices qui admettent $n$-valeurs propres distinctes. Déterminer l'adhérence et l'intérieur de $\mathcal{D}_n(\mathbb{C})$ et $\mathcal{D}_n^+(\mathbb{C})$.
+	\subsection*{Solutions}
+        
+	\subsubsection*{Exerice 1}
 	Montrons $\adh \mathcal{D}_n^+(\mathbb{C}) = \adh \mathcal{D}_n(\mathbb{C}) = \mathcal{M}_n(\mathbb{C})$. Soit $A\in\mathcal{M}_n(\mathbb{C})$ alors $A$ est trigonalisable, d'où 
 	\begin{align*}
 		A \sim \begin{pmatrix}   
@@ -160,12 +165,10 @@ Aussi, $\frac{\mathrm{d}}{\mathrm{d}u} \frac{e^{iu}}{u} = \frac{e^{iu}}{u}$ et $
 		\end{pmatrix}
 	\end{align*}
 
-	Alors $A_k\to A'$ et APCR, $A_k \in\mathcal{D}_n^+(\mathbb{C})$ car les éléments de sa diagonale finissent par tous être distincts. Comme $\mathcal{D}_n^+(\mathbb{C})\subset \mathcal{D}_n(\mathbb{C})$, on a montré l'égalité. 
+	Alors $A_k\to A'$ et APCR, $A_k \in\mathcal{D}_n^+(\mathbb{C})$ car les éléments de sa diagonale finissent par tous être distincts, d'où $\adh \mathcal{D}_n^+(\mathbb{C})=\mathcal{M}_n(\mathbb{C})$. Comme $\mathcal{D}_n^+(\mathbb{C})\subset \mathcal{D}_n(\mathbb{C})$, on a bien montré que $\adh \mathcal{D}_n^+(\mathbb{C}) = \adh \mathcal{D}_n(\mathbb{C}) = \mathcal{M}_n(\mathbb{C})$. 
 
-	Montrons que $\mathcal{D}_n^+(\mathbb{C})$ est un ouvert. Soit $A\in \mathcal{D}_n^+(\mathbb{C})$, alors \begin{align*}
-		A \sim \diag \{\lambda_1, \ldots\, \lambda_n\}, \,\, \forall i, j \in \llbracket 1; n\rrbracket, \,i\neq j \Rightarrow \lambda_i \neq \lambda_j
-	\end{align*}
-	Posons $\varepsilon = \min_{i,j} |\lambda_i-\lambda_j| \neq 0$, alors pour tout $0<r<\varepsilon$, $A-\eta I_n \in \mathcal{D}_n^+(\mathbb{C})$. Si on prend comme norme la norme infini, on obtient le résultat et puisque toutes les normes sont équivalentes en dimension finie, c'est bon.
+	Montrons que $\mathcal{D}_n^+(\mathbb{C})$ est un ouvert, i.e, $\mathcal{M}_n(\mathbb{C})\backslash\mathcal{D}_n^+(\mathbb{C})$ est fermé. Supposons par l'absurde qu'on dispose de $(A_k)\in\mathcal{D}_n^+(\mathbb{C})^\mathbb{N}$ tel que $A_k\to A$ avec $A\in\mathcal{D}_n^+(\mathbb{C})$, i.e, $\chi_A$ à racines simples. Pour tout $k$, on note $\chi_{A_k} = \prod_{i=1}^n (X-\lambda_{i,k})$, par continuité de $\chi$, $\chi_{A_k}\to \chi_A$. Nécessairement, les $(\lambda_{i,k})$ vont tendre vers les $n$-racines distinctes de $\chi_A$, c'est qu'APCR, les $(\lambda_{i,k})$ vont être distincts deux à deux, et donc qu'à partir de ce même rang, les $A_k$ est diagonalisable. Absurde.  
+
 
 	Montrons que $\inte \mathcal{D}_n(\mathbb{C}) = \mathcal{D}_n^+(\mathbb{C})$. On a bien $\mathcal{D}_n^+\subset \inte\mathcal{D}_n(\mathbb{C})$ puisque $\mathcal{D}_n^+(\mathbb{C})$ est un ouvert inclu dans $\mathcal{D}_n(\mathbb{C})$. 
 
@@ -181,6 +184,8 @@ Aussi, $\frac{\mathrm{d}}{\mathrm{d}u} \frac{e^{iu}}{u} = \frac{e^{iu}}{u}$ et $
 		A_k = A + E_{1, 2}\frac{1}{k}
 	\end{align*}
 
-	Alors pour tout $k\in\mathbb{N}^*$, $A_k$ n'est pas diagonalisable car $\dim E_{\lambda}(A_k) = p-1 < p$ alors que $p$ est la multiplicité de $\lambda$ dans $\chi_{A_k}$. De plus, $A_k\to A$. Ainsi, on a prouvé que $\mathcal{D}_n(\mathbb{C})\backslash\mathcal{D}_n^+(\mathbb{C}) \subset \adh(\mathcal{M}_n(\mathbb{C})\backslash\mathcal{D}_n(\mathbb{C}))$. 
+	Alors pour tout $k\in\mathbb{N}^*$, $A_k$ n'est pas diagonalisable car $\dim E_{\lambda}(A_k) = p-1 < p$ alors que $p$ est la multiplicité de $\lambda$ dans $\chi_{A_k}$. De plus, $A_k\to A$. Ainsi, on a prouvé que $\mathcal{D}_n(\mathbb{C})\backslash\mathcal{D}_n^+(\mathbb{C}) \subset \adh(\mathcal{M}_n(\mathbb{C})\backslash\mathcal{D}_n(\mathbb{C}))$.
+
+        Quelques précisions ont été faîtes par M. Monier que je n'ai pas précisé ici, les raisonnements peuvent être incomplets par moment.
 	\end{document}
 
